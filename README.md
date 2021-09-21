@@ -1,7 +1,7 @@
 # Note Touch
 
 - DDD Architecture Proposal:
-![Alt text]<img src="./ddd-architecture-proposal.svg">
+<img src="./ddd-architecture-proposal.svg">
 
 ## 1-Dashboard-Login
 an implementation for Login with my Back-End Rest-API (Nest.JS) , with Dashboard for different screen size
