@@ -1,7 +1,7 @@
 # Note Touch
 
 - DDD Architecture Proposal:
-![Alt text](./ddd-architecture-proposal.svg)
+![Alt text](ddd-architecture-proposal.svg)
 <img src="./ddd-architecture-proposal.svg">
 
 ## 1-Dashboard-Login
