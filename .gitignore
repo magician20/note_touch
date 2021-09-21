@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+*.gr.dart
 
 # IntelliJ related
 *.iml
@@ -24,12 +25,15 @@
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.vscode/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
+.metadata
 .pub-cache/
 .pub/
 /build/
+/test/
 
 # Web related
 lib/generated_plugin_registrant.dart
