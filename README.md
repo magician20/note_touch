@@ -19,4 +19,10 @@ implemented by using pub below:
 - animated_text_kit
 - flutter_native_splash
 
+
+
+https://user-images.githubusercontent.com/11742710/134408579-3b807cf7-48a9-4522-b118-990b4843413f.mp4
+
+
+
 ## 2-Note
