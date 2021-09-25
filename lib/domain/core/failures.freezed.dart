@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failures.dart';
 
@@ -131,6 +132,24 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -166,6 +185,24 @@ mixin _$ValueFailure<T> {
         atLeastOneSpecialChar,
     required TResult Function(InvalidStatus<T> value) invalidStatus,
     required TResult Function(InvalidState<T> value) invalidState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -311,6 +348,27 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return invalidEmail?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -354,6 +412,27 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return invalidEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return invalidEmail?.call(this);
   }
 
   @override
@@ -481,6 +560,27 @@ class _$InvalidUserName<T> implements InvalidUserName<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return invalidNameAlphabet?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -524,6 +624,27 @@ class _$InvalidUserName<T> implements InvalidUserName<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return invalidNameAlphabet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return invalidNameAlphabet?.call(this);
   }
 
   @override
@@ -662,6 +783,27 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return shortPassword?.call(failedValue, min);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -705,6 +847,27 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return shortPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return shortPassword?.call(this);
   }
 
   @override
@@ -844,6 +1007,27 @@ class _$ShortUserName<T> implements ShortUserName<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return shortUserName?.call(failedValue, min);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -887,6 +1071,27 @@ class _$ShortUserName<T> implements ShortUserName<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return shortUserName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return shortUserName?.call(this);
   }
 
   @override
@@ -1015,6 +1220,27 @@ class _$Multiline<T> implements Multiline<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return multiline?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -1058,6 +1284,27 @@ class _$Multiline<T> implements Multiline<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return multiline(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return multiline?.call(this);
   }
 
   @override
@@ -1196,6 +1443,27 @@ class _$ListTooLong<T> implements ListTooLong<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return listTooLong?.call(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -1239,6 +1507,27 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return listTooLong(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return listTooLong?.call(this);
   }
 
   @override
@@ -1378,6 +1667,27 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return exceedingLength?.call(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -1421,6 +1731,27 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return exceedingLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return exceedingLength?.call(this);
   }
 
   @override
@@ -1547,6 +1878,27 @@ class _$Empty<T> implements Empty<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return empty?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -1590,6 +1942,27 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return empty?.call(this);
   }
 
   @override
@@ -1718,6 +2091,27 @@ class _$AtLeastOneUpperChar<T> implements AtLeastOneUpperChar<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return atLeastOneUpperChar?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -1761,6 +2155,27 @@ class _$AtLeastOneUpperChar<T> implements AtLeastOneUpperChar<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return atLeastOneUpperChar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return atLeastOneUpperChar?.call(this);
   }
 
   @override
@@ -1889,6 +2304,27 @@ class _$AtLeastOneLowerChar<T> implements AtLeastOneLowerChar<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return atLeastOneLowerChar?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -1932,6 +2368,27 @@ class _$AtLeastOneLowerChar<T> implements AtLeastOneLowerChar<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return atLeastOneLowerChar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return atLeastOneLowerChar?.call(this);
   }
 
   @override
@@ -2059,6 +2516,27 @@ class _$AtLeastOneDigit<T> implements AtLeastOneDigit<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return atLeastOneDigit?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -2102,6 +2580,27 @@ class _$AtLeastOneDigit<T> implements AtLeastOneDigit<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return atLeastOneDigit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return atLeastOneDigit?.call(this);
   }
 
   @override
@@ -2231,6 +2730,27 @@ class _$AtLeastOneSpecialChar<T> implements AtLeastOneSpecialChar<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return atLeastOneSpecialChar?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -2274,6 +2794,27 @@ class _$AtLeastOneSpecialChar<T> implements AtLeastOneSpecialChar<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return atLeastOneSpecialChar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return atLeastOneSpecialChar?.call(this);
   }
 
   @override
@@ -2402,6 +2943,27 @@ class _$InvalidStatus<T> implements InvalidStatus<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return invalidStatus?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -2445,6 +3007,27 @@ class _$InvalidStatus<T> implements InvalidStatus<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return invalidStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return invalidStatus?.call(this);
   }
 
   @override
@@ -2572,6 +3155,27 @@ class _$InvalidState<T> implements InvalidState<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? invalidEmail,
+    TResult Function(T? failedValue)? invalidNameAlphabet,
+    TResult Function(T? failedValue, int? min)? shortPassword,
+    TResult Function(T? failedValue, int? min)? shortUserName,
+    TResult Function(T? failedValue)? multiline,
+    TResult Function(T? failedValue, int? max)? listTooLong,
+    TResult Function(T? failedValue, int? max)? exceedingLength,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? atLeastOneUpperChar,
+    TResult Function(T? failedValue)? atLeastOneLowerChar,
+    TResult Function(T? failedValue)? atLeastOneDigit,
+    TResult Function(T? failedValue)? atLeastOneSpecialChar,
+    TResult Function(T? failedValue)? invalidStatus,
+    TResult Function(T? failedValue)? invalidState,
+  }) {
+    return invalidState?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? invalidEmail,
     TResult Function(T? failedValue)? invalidNameAlphabet,
@@ -2615,6 +3219,27 @@ class _$InvalidState<T> implements InvalidState<T> {
     required TResult Function(InvalidState<T> value) invalidState,
   }) {
     return invalidState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUserName<T> value)? invalidNameAlphabet,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortUserName<T> value)? shortUserName,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(AtLeastOneUpperChar<T> value)? atLeastOneUpperChar,
+    TResult Function(AtLeastOneLowerChar<T> value)? atLeastOneLowerChar,
+    TResult Function(AtLeastOneDigit<T> value)? atLeastOneDigit,
+    TResult Function(AtLeastOneSpecialChar<T> value)? atLeastOneSpecialChar,
+    TResult Function(InvalidStatus<T> value)? invalidStatus,
+    TResult Function(InvalidState<T> value)? invalidState,
+  }) {
+    return invalidState?.call(this);
   }
 
   @override

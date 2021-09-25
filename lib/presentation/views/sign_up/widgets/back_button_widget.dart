@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:note_touch/presentation/routes/router.gr.dart';
 import 'package:note_touch/presentation/shared/style.dart';
 
 class BackButtonIn extends StatelessWidget {
@@ -10,7 +9,8 @@ class BackButtonIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.router.navigate(SignInRoute());
+        context.router.pop();
+      // context.router.navigate(SignInRoute());
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),

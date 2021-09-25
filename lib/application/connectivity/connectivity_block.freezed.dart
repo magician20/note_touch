@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'connectivity_block.dart';
 
@@ -32,6 +33,11 @@ mixin _$ConnectivityEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connectivityCheckRequested,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectivityCheckRequested,
     required TResult orElse(),
@@ -40,6 +46,12 @@ mixin _$ConnectivityEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectivityCheckRequested value)
+        connectivityCheckRequested,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ConnectivityCheckRequested value)?
         connectivityCheckRequested,
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +129,14 @@ class _$ConnectivityCheckRequested implements ConnectivityCheckRequested {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connectivityCheckRequested,
+  }) {
+    return connectivityCheckRequested?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectivityCheckRequested,
     required TResult orElse(),
@@ -134,6 +154,15 @@ class _$ConnectivityCheckRequested implements ConnectivityCheckRequested {
         connectivityCheckRequested,
   }) {
     return connectivityCheckRequested(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ConnectivityCheckRequested value)?
+        connectivityCheckRequested,
+  }) {
+    return connectivityCheckRequested?.call(this);
   }
 
   @override
@@ -184,6 +213,13 @@ mixin _$ConnectivityState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? online,
+    TResult Function()? offline,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? online,
@@ -196,6 +232,13 @@ mixin _$ConnectivityState {
     required TResult Function(Initial value) initial,
     required TResult Function(ConnectivityOnline value) online,
     required TResult Function(ConnectivityOffline value) offline,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ConnectivityOnline value)? online,
+    TResult Function(ConnectivityOffline value)? offline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -271,6 +314,16 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? online,
+    TResult Function()? offline,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? online,
@@ -291,6 +344,16 @@ class _$Initial implements Initial {
     required TResult Function(ConnectivityOffline value) offline,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ConnectivityOnline value)? online,
+    TResult Function(ConnectivityOffline value)? offline,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -361,6 +424,16 @@ class _$ConnectivityOnline implements ConnectivityOnline {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? online,
+    TResult Function()? offline,
+  }) {
+    return online?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? online,
@@ -381,6 +454,16 @@ class _$ConnectivityOnline implements ConnectivityOnline {
     required TResult Function(ConnectivityOffline value) offline,
   }) {
     return online(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ConnectivityOnline value)? online,
+    TResult Function(ConnectivityOffline value)? offline,
+  }) {
+    return online?.call(this);
   }
 
   @override
@@ -451,6 +534,16 @@ class _$ConnectivityOffline implements ConnectivityOffline {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? online,
+    TResult Function()? offline,
+  }) {
+    return offline?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? online,
@@ -471,6 +564,16 @@ class _$ConnectivityOffline implements ConnectivityOffline {
     required TResult Function(ConnectivityOffline value) offline,
   }) {
     return offline(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ConnectivityOnline value)? online,
+    TResult Function(ConnectivityOffline value)? offline,
+  }) {
+    return offline?.call(this);
   }
 
   @override

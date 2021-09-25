@@ -18,7 +18,7 @@ class SplashPage extends StatelessWidget {
           initial: (_) {},
           authenticated: (_) => Timer(
               const Duration(seconds: 5),
-              () => AutoRouter.of(context).replaceAll([HomeRouter(),])
+              () => AutoRouter.of(context).replaceAll([HomeRoute(),])
               // context.router.pushAndPopUntil(HomeRouter(), predicate: (route) => false)
               ),
           //here will be change to home also

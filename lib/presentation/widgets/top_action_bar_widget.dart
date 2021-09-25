@@ -30,7 +30,7 @@ class _TopActionBarState extends State<TopActionBar> {
           child: Row(
             children: <Widget>[
               const SizedBox(width: 20),
-              if (Responsive.isShowDrawerSize(context))
+              if (!Responsive.isShowDrawerSize(context))
                 InkWell(
                     child:
                         Icon(Icons.menu, color: Theme.of(context).primaryColor),

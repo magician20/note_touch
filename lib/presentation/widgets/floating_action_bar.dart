@@ -44,7 +44,6 @@ class _FloatingActionBarState extends State<FloatingActionBar> {
               //  leading: const AutoBackButton(),
             ),
             SliverFillRemaining(
-              hasScrollBody: false,
               //a Page Content and Must be silver render
               child: widget.child!,
             )

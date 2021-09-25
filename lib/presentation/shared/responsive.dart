@@ -23,7 +23,7 @@ class Responsive extends StatelessWidget {
       MediaQuery.of(context).size.width < mobileBreakpoint;
 
    static bool isShowDrawerSize(BuildContext context) =>
-      MediaQuery.of(context).size.width < limitDrawerBreakpoint;    
+      MediaQuery.of(context).size.width > limitDrawerBreakpoint;    
 
   static bool isTablet(BuildContext context) =>
       MediaQuery.of(context).size.width < desktopBreakpoint &&

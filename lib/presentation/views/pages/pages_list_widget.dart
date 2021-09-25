@@ -1,47 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:note_touch/presentation/views/pages/page_card_widget.dart';
 
 /// ListView for notes
 class PagesList extends StatelessWidget {
   // final List<Note> notes;
   // final void Function(Note) onTap;
+    final List<PageCard> notes;
 
   const PagesList({
     Key? key,
-    //@required this.notes,
+    required this.notes,
    // this.onTap,
   }) : super(key: key);
 
-  static PagesList create({
-    Key? key,
-    //@required List<Note> notes,
-    //void Function(Note) onTap,
-  }) => PagesList(
-    key: key,
-   // notes: notes,
-   // onTap: onTap,
-  );
+  // static PagesList create({
+  //   Key? key,
+  //   //@required List<Note> notes,
+  //   //void Function(Note) onTap,
+  // }) => PagesList(
+  //   key: key,
+  //  // notes: notes,
+  //  // onTap: onTap,
+  // );
 
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+     return SliverPadding(
+    padding: const EdgeInsets.symmetric(horizontal: 10),
+    sliver: SliverList(
+      delegate: SliverChildListDelegate(notes),
+    ),
+  );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //    SliverPadding(
-  //   padding: const EdgeInsets.symmetric(horizontal: 10),
-  //   sliver: SliverList(
-  //     delegate: SliverChildListDelegate(
-  //       notes.flatMapIndexed((i, note) => <Widget>[
-  //         InkWell(
-  //           onTap: () => onTap?.call(note),
-  //           child: NoteItem(note: note),
-  //         ),
-  //         if (i < notes.length - 1) const SizedBox(height: 10),
-  //       ]).asList(),
-  //     ),
-  //   ),
-  // );
-  // }
-  // 
+  
 }

@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
+  final _routerKey = GlobalObjectKey('auth_router');
   //GlobalKey
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
@@ -38,7 +39,7 @@ class _HomePage extends State<HomePage> {
           );
         },
         child: AutoTabsScaffold(
-          // appBarBuilder: (context, tabsRouter) {} ,//so this will not be responsive??
+          //scaffoldKey: _scaffoldKey,//not working
           backgroundColor: Theme.of(context).bottomAppBarColor,
           routes: [
             NotesRoute(),
@@ -48,41 +49,29 @@ class _HomePage extends State<HomePage> {
             AboutRoute()
           ],
           builder: (context, childWidget, animation) {
-            return Responsive.isShowDrawerSize(context)
-                ? Scaffold(
-                    key: _scaffoldKey,
-                    drawer: AppDrawer(),
-                    body: FloatingActionBar(
-                        scaffoldKey: _scaffoldKey, child: childWidget),
-                  )
-                : Scaffold(
-                    key: _scaffoldKey,
-                    body: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      //redesign this code buy make appbarsilver at start then body(have drawer and home page )
-                      children: [
-                        //  if (Responsive.isDesktop(context))
-                        Expanded(
-                          // and it takes 1/6 part of the screen
-                          flex: 1,
-                          child: AppDrawer(),
-                        ),
-                        const SizedBox(
-                          width: 10.0,
-                        ),
-                        Expanded(
-                          // It takes 5/6 part of the screen
-                          flex: 5,
-                          //this hold appbar silver and body inside list
-                          child: FloatingActionBar(
-                              scaffoldKey: _scaffoldKey, child: childWidget),
-                        ),
-                        const SizedBox(
-                          width: 10.0,
-                        ),
-                      ],
-                    ),
-                  );
+            // final tabsRouter = AutoTabsRouter.of(context);
+            return Scaffold(
+              key: _scaffoldKey,
+              drawer: AppDrawer(),
+              body: SafeArea(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (Responsive.isShowDrawerSize(context))
+                      Expanded(
+                        // flex: 1,
+                        child: AppDrawer(),
+                      ),
+                    Expanded(
+                        // It takes 5/6 part of the screen
+                        flex: 5,
+                        //this hold appbar silver and body inside list
+                        child: FloatingActionBar(
+                            scaffoldKey: _scaffoldKey, child: KeyedSubtree(key: _routerKey,child: childWidget))),
+                  ],
+                ),
+              ),
+            );
           },
         ),
       ),

@@ -71,7 +71,8 @@ class _SignInFormState extends State<SignInForm> {
                 //Naviagate to home page for Notes and not bk again to sign page until u loged out
                 //AutoRouter.of(context).pushAndPopUntil(HomeRouter(), predicate: (route) => false);
                 // AutoRouter.of(context).popUntilRoot();
-                AutoRouter.of(context).replaceAll([HomeRouter()]);
+                AutoRouter.of(context).replaceAll([HomeRoute()]);
+               // AutoRouter.of(context).popUntilRoot();
               },
             );
           },

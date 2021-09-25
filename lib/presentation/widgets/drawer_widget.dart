@@ -42,7 +42,7 @@ class _AppDrawerState extends State<AppDrawer> {
                     AutoRouter.of(context).pop();
                   context.tabsRouter.setActiveIndex(0);
                   // AutoRouter.of(context)
-                  //     .innerRouterOf(HomeRouter.name)!
+                  //     .innerRouterOf(HomeRoute.name)!
                   //     .navigate(NotesRoute());
                 },
                 onHover: (_) {
@@ -64,9 +64,9 @@ class _AppDrawerState extends State<AppDrawer> {
                 onTap: () {
                   if (Responsive.isMobile(context))
                     AutoRouter.of(context).pop();
-                  //  AutoRouter.innerRouterOf(context, HomeRouter.name)!.push(ArchiveRoute());//didin't work
+                  //  AutoRouter.innerRouterOf(context, HomeRoute.name)!.push(ArchiveRoute());//didin't work
                   context.tabsRouter.setActiveIndex(1);
-                  // AutoRouter.of(context).innerRouterOf(HomeRouter.name)!.navigate(ArchiveRoute());
+                  // AutoRouter.of(context).innerRouterOf(HomeRoute.name)!.navigate(ArchiveRoute());
                 },
                 onHover: (_) {
                   if (_hoveredTabIndex != 1)
@@ -87,7 +87,7 @@ class _AppDrawerState extends State<AppDrawer> {
 
                   context.tabsRouter.setActiveIndex(2);
                   // AutoRouter.of(context)
-                  //     .innerRouterOf(HomeRouter.name)!
+                  //     .innerRouterOf(HomeRoute.name)!
                   //     .navigate(TrashRoute());
                 },
                 onHover: (_) {
@@ -111,7 +111,7 @@ class _AppDrawerState extends State<AppDrawer> {
                     AutoRouter.of(context).pop();
                   context.tabsRouter.setActiveIndex(3);
                   // AutoRouter.of(context)
-                  //     .innerRouterOf(HomeRouter.name)!
+                  //     .innerRouterOf(HomeRoute.name)!
                   //     .navigate(SettingsRoute());
                 },
                 onHover: (_) {
@@ -133,7 +133,7 @@ class _AppDrawerState extends State<AppDrawer> {
 
                   context.tabsRouter.setActiveIndex(4);
                   // AutoRouter.of(context)
-                  //     .innerRouterOf(HomeRouter.name)!
+                  //     .innerRouterOf(HomeRoute.name)!
                   //     .navigate(AboutRoute());
                 },
                 onHover: (_) {
