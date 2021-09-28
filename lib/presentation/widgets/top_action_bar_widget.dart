@@ -35,6 +35,7 @@ class _TopActionBarState extends State<TopActionBar> {
                     child:
                         Icon(Icons.menu, color: Theme.of(context).primaryColor),
                     onTap: () {
+                      print("clicked");
                       //can't open it for tables or screen size 1/2 desktop
                       if (!widget.scaffoldKey!.currentState!.isDrawerOpen) {
                         widget.scaffoldKey!.currentState?.openDrawer();

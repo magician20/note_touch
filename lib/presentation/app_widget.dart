@@ -28,8 +28,8 @@ class _AppState extends State<App> {
           create: (_) =>
               getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
         ),
-        // BlocProvider(create: (context) =>DrawerControllerCubit()), //failed to write the code code
         BlocProvider(create: (context) => getIt<ThemeBloc>()),
+        //BlocProvider(create: (context) => getIt<GridviewCubit>()),
       ],
       //ThemeBloc at the Root LVL
       child: BlocBuilder<ThemeBloc, ThemeState>(

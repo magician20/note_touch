@@ -42,7 +42,7 @@ class _HomePage extends State<HomePage> {
           //scaffoldKey: _scaffoldKey,//not working
           backgroundColor: Theme.of(context).bottomAppBarColor,
           routes: [
-            NotesRoute(),
+            NotesRoute(scaffoldKey: _scaffoldKey),
             ArchiveRoute(),
             TrashRoute(),
             SettingsRoute(),
@@ -52,6 +52,8 @@ class _HomePage extends State<HomePage> {
             // final tabsRouter = AutoTabsRouter.of(context);
             return Scaffold(
               key: _scaffoldKey,
+              drawerEnableOpenDragGesture:
+                  Responsive.isShowDrawerSize(context) ? false : true,
               drawer: AppDrawer(),
               body: SafeArea(
                 child: Row(
@@ -66,8 +68,9 @@ class _HomePage extends State<HomePage> {
                         // It takes 5/6 part of the screen
                         flex: 5,
                         //this hold appbar silver and body inside list
-                        child: FloatingActionBar(
-                            scaffoldKey: _scaffoldKey, child: KeyedSubtree(key: _routerKey,child: childWidget))),
+                        child: KeyedSubtree(
+                            key: GlobalObjectKey(childWidget.toString()),
+                            child: childWidget)),
                   ],
                 ),
               ),

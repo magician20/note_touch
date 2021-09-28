@@ -1,52 +1,38 @@
 import 'package:flutter/material.dart';
-
+import 'package:note_touch/presentation/views/pages/page_card_widget.dart';
 
 /// Grid view of [Note]s.
 class PagesGrid extends StatelessWidget {
-  // final List<Note> notes;
-  // final void Function(Note) onTap;
+  final List<PageCard> notes;
 
   const PagesGrid({
     Key? key,
-   // @required this.notes,
-   // this.onTap,
+    required this.notes,
   }) : super(key: key);
 
-  static PagesGrid create({
-    Key? key,
-    // @required List<Note> notes,
-    // void Function(Note) onTap,
-  }) => PagesGrid(
-    key: key,
-    // notes: notes,
-    // onTap: onTap,
-  );
+  // static PagesGrid create({
+  //   Key? key,
+  //  required List<PageCard> notes,
+  //   // void Function(Note) onTap,
+  // }) => PagesGrid(
+  //   key: key,
+  //   notes: notes,
+  //   // onTap: onTap,
+  // );
 
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return GridView.builder(
+      itemCount: notes.length,
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 1/1.2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0),
+      itemBuilder: (context, index) {
+        return notes[
+            index]; //new PageCard will be create here and pass the ID to show on the url
+      },
+    );
   }
-
-  // @override
-  // Widget build(BuildContext context) => SliverPadding(
-  //   padding: const EdgeInsets.symmetric(horizontal: 10),
-  //   sliver: SliverGrid(
-  //     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-  //       maxCrossAxisExtent: 200.0,
-  //       mainAxisSpacing: 10.0,
-  //       crossAxisSpacing: 10.0,
-  //       childAspectRatio: 1 / 1.2,
-  //     ),
-  //     delegate: SliverChildBuilderDelegate(
-  //       (BuildContext context, int index) => _noteItem(context, notes[index]),
-  //       childCount: notes.length,
-  //     ),
-  //   ),
-  // );
-
-  // Widget _noteItem(BuildContext context, Note note) => InkWell(
-  //   onTap: () => onTap?.call(note),
-  //   child: NoteItem(note: note),
-  // );
-  
 }

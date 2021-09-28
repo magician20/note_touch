@@ -24,6 +24,7 @@ class _AppDrawerState extends State<AppDrawer> {
     //need to update the code to use Responsive layout and animation to resize drawer for tablet
     return Material(
       child: Drawer(
+        elevation: 5,
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).scaffoldBackgroundColor,

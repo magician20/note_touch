@@ -6,6 +6,7 @@ import 'package:note_touch/presentation/views/about/about_page.dart';
 import 'package:note_touch/presentation/views/archive/archive_page.dart';
 import 'package:note_touch/presentation/views/home/home_form_widget.dart';
 import 'package:note_touch/presentation/views/home/home_page.dart';
+import 'package:note_touch/presentation/views/pages/notes_wrapper_widget.dart';
 import 'package:note_touch/presentation/views/pages/page_form.dart';
 import 'package:note_touch/presentation/views/settings/settings_page.dart';
 import 'package:note_touch/presentation/views/sign_in/sign_in_page.dart';
@@ -39,13 +40,15 @@ import 'package:note_touch/presentation/views/sign_up/sign_up_page.dart';
     ),
 
     //Home routes with a nested router (NEED TO ADD GUARD AND CHECK NAVIGATION)
-    AutoRoute(path: "/home", page: HomePage, children: [
+    AutoRoute(
+     path: "/home",
+     page: HomePage, 
+     children: [
       RedirectRoute(path: '', redirectTo: 'notes'),
-      //I still don't know why it's prefer to use /notes and /notes:id at same lvl
       AutoRoute(
           path: 'notes',
-          name: "NotesRoute",
-          page: EmptyRouterPage,
+          name: "NotesRoute",//<<<
+          page: NotesWrapperPage, //this class cause problem when navigate to page detail with id
           children: [
             AutoRoute(path: '', page: HomeFormWidget),
             // add the guard here to check if the bookId exists first before pushing the page

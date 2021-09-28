@@ -1,6 +1,5 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flutter/material.dart';
 import 'package:note_touch/presentation/routes/router.gr.dart';
 
@@ -34,8 +33,10 @@ class _PageFormState extends State<PageForm> {
                   icon: const BackButtonIcon(),
                   tooltip: MaterialLocalizations.of(context).backButtonTooltip,
                   onPressed: () {
-                     context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.pop();
                     //AutoRouter.innerRouterOf(context, PageFormRoute.name)!.pop();//not work
+                    // context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.pop();
+                     context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.navigate(NotesRoute());
+                    //context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.removeLast();
                      
                     },
                 ),
