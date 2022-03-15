@@ -87,5 +87,6 @@ class DrawerFilterItem extends StatelessWidget {
     } else if (isChecked == false && isHovered == true) {
       return Theme.of(context).hoverColor;
     }
+    return Theme.of(context).textSelectionTheme.selectionColor;
   }
 }

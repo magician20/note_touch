@@ -13,12 +13,9 @@ import 'package:note_touch/infrastructure/remote/auth/auth_service.dart';
 import 'package:note_touch/infrastructure/remote/auth/models/auth_built_model.dart';
 import 'package:note_touch/infrastructure/remote/core/constants.dart';
 
-
-// import 'firebase_user_mapper.dart';
-
 @LazySingleton(as: IAuthFacade)
 class AuthFacade implements IAuthFacade {
-  //need call Chopper services or have object to acess services
+  //need call Chopper/retrofit services or have object to acess services
   final AuthService _authService;
   final SecureStorage _secureStorage;
   final WebStorage _webStorage;

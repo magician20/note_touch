@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_failure.dart';
@@ -141,17 +142,26 @@ class _$CancelledByUserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CancelledByUser implements CancelledByUser {
+class _$CancelledByUser
+    with DiagnosticableTreeMixin
+    implements CancelledByUser {
   const _$CancelledByUser();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthFailure.cancelledByUser()';
   }
 
   @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'AuthFailure.cancelledByUser'));
+  }
+
+  @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CancelledByUser);
   }
 
   @override
@@ -265,17 +275,24 @@ class _$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
+class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   const _$ServerError();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthFailure.serverError()';
   }
 
   @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'AuthFailure.serverError'));
+  }
+
+  @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -390,17 +407,27 @@ class _$EmailAlreadyInUseCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailAlreadyInUse implements EmailAlreadyInUse {
+class _$EmailAlreadyInUse
+    with DiagnosticableTreeMixin
+    implements EmailAlreadyInUse {
   const _$EmailAlreadyInUse();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthFailure.emailAlreadyInUse()';
   }
 
   @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthFailure.emailAlreadyInUse'));
+  }
+
+  @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is EmailAlreadyInUse);
   }
 
   @override
@@ -519,18 +546,28 @@ class _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InvalidEmailAndPasswordCombination
+    with DiagnosticableTreeMixin
     implements InvalidEmailAndPasswordCombination {
   const _$InvalidEmailAndPasswordCombination();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthFailure.invalidEmailAndPasswordCombination()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AuthFailure.invalidEmailAndPasswordCombination'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmailAndPasswordCombination);
+        (other.runtimeType == runtimeType &&
+            other is InvalidEmailAndPasswordCombination);
   }
 
   @override
@@ -646,17 +683,27 @@ class _$StorageWriteFailedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StorageWriteFailed implements StorageWriteFailed {
+class _$StorageWriteFailed
+    with DiagnosticableTreeMixin
+    implements StorageWriteFailed {
   const _$StorageWriteFailed();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthFailure.storageWriteFailed()';
   }
 
   @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthFailure.storageWriteFailed'));
+  }
+
+  @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is StorageWriteFailed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is StorageWriteFailed);
   }
 
   @override

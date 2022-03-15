@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_touch/application/auth/auth_bloc.dart';
 import 'package:note_touch/presentation/routes/router.gr.dart';
 import 'package:note_touch/presentation/widgets/drawer_widget.dart';
-import 'package:note_touch/presentation/widgets/floating_action_bar.dart';
 
 import '../../../injection.dart';
 import '../../shared/responsive.dart';
@@ -17,7 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  final _routerKey = GlobalObjectKey('auth_router');
   //GlobalKey
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override

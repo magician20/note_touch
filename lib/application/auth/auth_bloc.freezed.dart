@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_bloc.dart';
@@ -117,7 +118,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AuthCheckRequested);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AuthCheckRequested);
   }
 
   @override
@@ -218,7 +220,8 @@ class _$SignedOut implements SignedOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignedOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignedOut);
   }
 
   @override
@@ -308,6 +311,10 @@ class _$AuthStateTearOff {
   Unauthenticated unauthenticated() {
     return const Unauthenticated();
   }
+
+  LoadingOut loadingOut() {
+    return const LoadingOut();
+  }
 }
 
 /// @nodoc
@@ -320,6 +327,7 @@ mixin _$AuthState {
     required TResult Function() initial,
     required TResult Function(User user) authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() loadingOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -327,6 +335,7 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -334,6 +343,7 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -342,6 +352,7 @@ mixin _$AuthState {
     required TResult Function(Initial value) initial,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(LoadingOut value) loadingOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -349,6 +360,7 @@ mixin _$AuthState {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -356,6 +368,7 @@ mixin _$AuthState {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -404,7 +417,8 @@ class _$Initial implements Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Initial);
   }
 
   @override
@@ -416,6 +430,7 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function(User user) authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() loadingOut,
   }) {
     return initial();
   }
@@ -426,6 +441,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
   }) {
     return initial?.call();
   }
@@ -436,6 +452,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -450,6 +467,7 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(LoadingOut value) loadingOut,
   }) {
     return initial(this);
   }
@@ -460,6 +478,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
   }) {
     return initial?.call(this);
   }
@@ -470,6 +489,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -539,14 +559,14 @@ class _$Authenticated implements Authenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Authenticated &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is Authenticated &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -559,6 +579,7 @@ class _$Authenticated implements Authenticated {
     required TResult Function() initial,
     required TResult Function(User user) authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() loadingOut,
   }) {
     return authenticated(user);
   }
@@ -569,6 +590,7 @@ class _$Authenticated implements Authenticated {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
   }) {
     return authenticated?.call(user);
   }
@@ -579,6 +601,7 @@ class _$Authenticated implements Authenticated {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -593,6 +616,7 @@ class _$Authenticated implements Authenticated {
     required TResult Function(Initial value) initial,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(LoadingOut value) loadingOut,
   }) {
     return authenticated(this);
   }
@@ -603,6 +627,7 @@ class _$Authenticated implements Authenticated {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
   }) {
     return authenticated?.call(this);
   }
@@ -613,6 +638,7 @@ class _$Authenticated implements Authenticated {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -625,7 +651,7 @@ class _$Authenticated implements Authenticated {
 abstract class Authenticated implements AuthState {
   const factory Authenticated(User user) = _$Authenticated;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $AuthenticatedCopyWith<Authenticated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -661,7 +687,8 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unauthenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unauthenticated);
   }
 
   @override
@@ -673,6 +700,7 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function() initial,
     required TResult Function(User user) authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() loadingOut,
   }) {
     return unauthenticated();
   }
@@ -683,6 +711,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
   }) {
     return unauthenticated?.call();
   }
@@ -693,6 +722,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function()? initial,
     TResult Function(User user)? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -707,6 +737,7 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function(Initial value) initial,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(LoadingOut value) loadingOut,
   }) {
     return unauthenticated(this);
   }
@@ -717,6 +748,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
   }) {
     return unauthenticated?.call(this);
   }
@@ -727,6 +759,7 @@ class _$Unauthenticated implements Unauthenticated {
     TResult Function(Initial value)? initial,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -738,4 +771,119 @@ class _$Unauthenticated implements Unauthenticated {
 
 abstract class Unauthenticated implements AuthState {
   const factory Unauthenticated() = _$Unauthenticated;
+}
+
+/// @nodoc
+abstract class $LoadingOutCopyWith<$Res> {
+  factory $LoadingOutCopyWith(
+          LoadingOut value, $Res Function(LoadingOut) then) =
+      _$LoadingOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoadingOutCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements $LoadingOutCopyWith<$Res> {
+  _$LoadingOutCopyWithImpl(LoadingOut _value, $Res Function(LoadingOut) _then)
+      : super(_value, (v) => _then(v as LoadingOut));
+
+  @override
+  LoadingOut get _value => super._value as LoadingOut;
+}
+
+/// @nodoc
+
+class _$LoadingOut implements LoadingOut {
+  const _$LoadingOut();
+
+  @override
+  String toString() {
+    return 'AuthState.loadingOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoadingOut);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(User user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() loadingOut,
+  }) {
+    return loadingOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
+  }) {
+    return loadingOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? loadingOut,
+    required TResult orElse(),
+  }) {
+    if (loadingOut != null) {
+      return loadingOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(LoadingOut value) loadingOut,
+  }) {
+    return loadingOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
+  }) {
+    return loadingOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(LoadingOut value)? loadingOut,
+    required TResult orElse(),
+  }) {
+    if (loadingOut != null) {
+      return loadingOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingOut implements AuthState {
+  const factory LoadingOut() = _$LoadingOut;
 }

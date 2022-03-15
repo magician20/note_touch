@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:note_touch/domain/auth/repository/auth_failure.dart';
 import 'package:note_touch/domain/auth/repository/i_auth_facade.dart';
 import 'package:note_touch/domain/auth/validate/value_objects.dart';
@@ -21,88 +20,81 @@ const DEFAULT_INPUTLOGIN_DEBOUNCE = 300;
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final IAuthFacade _authFacade;
 
-  SignUpBloc(this._authFacade) : super(SignUpState.initial());
+  SignUpBloc(this._authFacade) : super(SignUpState.initial()) {
+    on<EmailChanged>(_mapEmailChangedToState);
+    on<PasswordChanged>(_mapPasswordChangedToState);
+    on<FirstNameChanged>(_mapUserFirstNameChangedToState);
+    on<LastNameChanged>(_mapUserLastNameChangedToState);
+    on<RegisterWithEmailAndPasswordPressed>(
+        _mapRegisterWithEmailAndPasswordPressedToState);
+  }
 
-/*
-  @override
-  SignUpState get initialState => SignUpState.initial();
-  */
 
 /*
  * each time the user changes the text input, a new request is sent. So when the user types the 
  * email quickly there will be as many requests as the letters this title contains. good practice in
  * this situation is to wait for a small amount of time and cancel the previous request when 
- * a new one is send This method is called (debounce)>>RXDart
+ * a new one is send This method is called (debounce) >> RXDart
 */
-  @override
-  Stream<Transition<SignUpEvent, SignUpState>> transformEvents(
-      Stream<SignUpEvent> events, transitionFn) {
-    final nonDebounceStream = events.where((event) {
-      return event is! EmailChanged &&
-          event is! PasswordChanged &&
-          event is! FirstNameChanged &&
-          event is! LastNameChanged;
-    });
-    final debounceStream = events.where((event) {
-      return event is EmailChanged ||
-          event is PasswordChanged ||
-          event is FirstNameChanged ||
-          event is LastNameChanged;
-    }).debounceTime(const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE));
-    return super.transformEvents(
-      nonDebounceStream.mergeWith([debounceStream]),
-      transitionFn,
-    );
-  }
+  // @override
+  // Stream<Transition<SignUpEvent, SignUpState>> transformEvents(Stream<SignUpEvent> events, transitionFn) {
+  //   final nonDebounceStream = events.where((event) {
+  //     return event is! EmailChanged &&
+  //         event is! PasswordChanged &&
+  //         event is! FirstNameChanged &&
+  //         event is! LastNameChanged;
+  //   });
+  //   final debounceStream = events.where((event) {
+  //     return event is EmailChanged ||
+  //         event is PasswordChanged ||
+  //         event is FirstNameChanged ||
+  //         event is LastNameChanged;
+  //   }).debounceTime(const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE));
+  //   return super.transformEvents(
+  //     nonDebounceStream.mergeWith([debounceStream]),
+  //     transitionFn,
+  //   );
+  // }
 
-  @override
-  Stream<SignUpState> mapEventToState(
-    SignUpEvent event,
-  ) async* {
-    // implement mapEventToState
-    yield* event.map(
-        emailChanged: _mapEmailChangedToState,
-        passwordChanged: _mapPasswordChangedToState,
-        firstNameChanged: _mapUserFirstNameChangedToState,
-        lastNameChanged: _mapUserLastNameChangedToState,
-        registerWithEmailAndPasswordPressed:
-            _mapRegisterWithEmailAndPasswordPressedToState);
-  }
 
-  Stream<SignUpState> _mapEmailChangedToState(EmailChanged e) async* {
+ Future<void> _mapEmailChangedToState(
+      EmailChanged e, Emitter<SignUpState> emit) async {
     //generate EmailaddressChanged state
-    yield state.copyWith(
+    emit(state.copyWith(
       emailAddress: EmailAddress(e.emailStr!),
       authFailureOrSuccessOption: none(),
-    );
+    ));
   }
 
-  Stream<SignUpState> _mapPasswordChangedToState(PasswordChanged e) async* {
+  Future<void> _mapPasswordChangedToState(
+      PasswordChanged e, Emitter<SignUpState> emit) async {
     //generate PasswordChanged state
-    yield state.copyWith(
+    emit(state.copyWith(
       password: Password(e.passwordStr!),
       authFailureOrSuccessOption: none(),
-    );
+    ));
   }
 
-  Stream<SignUpState> _mapUserFirstNameChangedToState(FirstNameChanged e) async* {
+  Future<void> _mapUserFirstNameChangedToState(
+      FirstNameChanged e, Emitter<SignUpState> emit) async {
     //generate PasswordChanged state
-    yield state.copyWith(
+    emit(state.copyWith(
       firstName: FirstName(e.firstNameStr!),
       authFailureOrSuccessOption: none(),
-    );
+    ));
   }
 
-    Stream<SignUpState> _mapUserLastNameChangedToState(LastNameChanged e) async* {
+  Future<void> _mapUserLastNameChangedToState(
+      LastNameChanged e, Emitter<SignUpState> emit) async {
     //generate PasswordChanged state
-    yield state.copyWith(
+    emit(state.copyWith(
       lastName: LastName(e.lastNameStr!),
       authFailureOrSuccessOption: none(),
-    );
+    ));
   }
 
-  Stream<SignUpState> _mapRegisterWithEmailAndPasswordPressedToState(
-      RegisterWithEmailAndPasswordPressed e) async* {
+  Future<void> _mapRegisterWithEmailAndPasswordPressedToState(
+      RegisterWithEmailAndPasswordPressed e, Emitter<SignUpState> emit) async {
     Either<AuthFailure, Unit>? failureOrSuccess;
     //check all values(also first name /last name / phone number)
     final isEmailValid = state.emailAddress!.isValid();
@@ -113,10 +105,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     //check if all valid
     if (isEmailValid && isPasswordValid && isUserNameValid) {
       //sumbit state generated >> show loading screen until data comming
-      yield state.copyWith(
+      emit(state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),
-      );
+      ));
       //USING REPOSITORY TO Register
       failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
           firstName: state.firstName,
@@ -125,10 +117,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           password: state.password);
     }
     //RegisterSucessOrFailure state generated
-    yield state.copyWith(
+    emit(state.copyWith(
       isSubmitting: false,
       showErrorMessages: true,
       authFailureOrSuccessOption: optionOf(failureOrSuccess),
-    );
+    ));
   }
 }

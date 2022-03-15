@@ -1,10 +1,11 @@
-import 'dart:async'; //For StreamController/Stream
-import 'dart:io'; //InternetAddress utility
+//For StreamController/Stream
+import 'dart:async';
+//InternetAddress utility
+import 'dart:io';
 
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:injectable/injectable.dart';
 import 'package:note_touch/domain/local/i_connectivity_facade.dart';
-
 
 // singleton class that listens  for connectivity changes, then tests the network connection,
 // then uses a StreamController to update anything that cares.
@@ -13,11 +14,11 @@ class ConnectivityService implements IConnectivityFacade {
   //This tracks the current connection status
   bool hasConnection = false;
 
+ //flutter_connectivity
+  final Connectivity _connectivity = Connectivity();
+
   //This is how we'll allow subscribing to connection changes
   StreamController connectionChangeController = StreamController.broadcast();
-
-  //flutter_connectivity
-  final Connectivity _connectivity = Connectivity();
 
   //Hook into flutter_connectivity's Stream to listen for changes
   //And check the connection status out of the gate

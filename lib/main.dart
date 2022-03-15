@@ -8,13 +8,19 @@ import 'injection.dart';
 import 'presentation/app_widget.dart';
 
 void main() {
-  /*  
-  *WidgetsFlutterBinding.ensureInitialized() is required in Flutter v1.9.4+ 
- *  before using any plugins if the code is executed before runApp. 
+/*  
+ *WidgetsFlutterBinding.ensureInitialized() is required in Flutter v1.9.4+ 
+ *before using any plugins if the code is executed before runApp. 
  */
   WidgetsFlutterBinding.ensureInitialized();
+  //build injection
   configureInjection();
-  setPathUrlStrategy(); //For remove # from URL for all platform read docs
-  Bloc.observer = SimpleBlocDelegate();
-  runApp(App());
+  //For remove # from URL for all platform, read docs
+  setPathUrlStrategy();
+  //build block observer
+   BlocOverrides.runZoned(
+    () => runApp(App()),
+    blocObserver: SimpleBlocDelegate(),
+  );
+  
 }

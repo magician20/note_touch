@@ -20,11 +20,20 @@ const DEFAULT_INPUTLOGIN_DEBOUNCE = 300;
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthFacade _authFacade;
 
-  SignInBloc(this._authFacade) : super(SignInState.initial());
-  /*
+  SignInBloc(this._authFacade) : super(SignInState.initial()) {
+    on<EmailChanged>(_mapEmailChangedToState);
+    on<PasswordChanged>(_mapPasswordChangedToState);
+    on<SignInWithEmailAndPasswordPressed>(
+        _mapSignInWithEmailAndPasswordPressedToState);
+    on<SignInWithGooglePressed>(_mapSignInWithGooglePressedToState);
+  }
+
   @override
-  SignInState get initialState => SignInState.initial();
-  */
+  void onTransition(Transition<SignInEvent, SignInState> transition) {
+    print(transition);
+    super.onTransition(transition);
+  }
+
 
 /*
  * each time the user changes the text input, a new request is sent. So when the user types the 
@@ -32,53 +41,43 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
  * this situation is to wait for a small amount of time and cancel the previous request when 
  * a new one is send This method is called (debounce)>>RXDart
 */
-  @override
-  Stream<Transition<SignInEvent, SignInState>> transformEvents(
-      Stream<SignInEvent> events, transitionFn) {
-    final nonDebounceStream = events.where((event) {
-      return event is! EmailChanged && event is! PasswordChanged;
-    });
-    final debounceStream = events.where((event) {
-      return event is EmailChanged || event is PasswordChanged;
-    }).debounceTime(const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE));
-    return super.transformEvents(
-      nonDebounceStream.mergeWith([debounceStream]),
-      transitionFn,
-    );
-  }
+  // @override
+  // Stream<Transition<SignInEvent, SignInState>> transformEvents(
+  //     Stream<SignInEvent> events, transitionFn) {
+  //   final nonDebounceStream = events.where((event) {
+  //     return event is! EmailChanged && event is! PasswordChanged;
+  //   });
+  //   final debounceStream = events.where((event) {
+  //     return event is EmailChanged || event is PasswordChanged;
+  //   }).debounceTime(const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE));
+  //   return super.transformEvents(
+  //     nonDebounceStream.mergeWith([debounceStream]),
+  //     transitionFn,
+  //   );
+  // }
 
-  @override
-  Stream<SignInState> mapEventToState(SignInEvent event) async* {
-    // implement mapEventToState
-    yield* event.map(
-        //validate value when writing
-        emailChanged: _mapEmailChangedToState,
-        //validate value when writing
-        passwordChanged: _mapPasswordChangedToState,
-        signInWithEmailAndPasswordPressed:
-            _mapSignInWithEmailAndPasswordPressedToState,
-        signInWithGooglePressed: _mapSignInWithGooglePressedToState);
-  }
 
   //*********************Implemention for generate Sates*************/
-  Stream<SignInState> _mapEmailChangedToState(EmailChanged e) async* {
+  Future<void> _mapEmailChangedToState(
+      EmailChanged e, Emitter<SignInState> emit) async {
     //generate EmailaddressChanged state
-    yield state.copyWith(
+    emit(state.copyWith(
       emailAddress: EmailAddress(e.emailStr!),
       authFailureOrSuccessOption: none(),
-    );
+    ));
   }
 
-  Stream<SignInState> _mapPasswordChangedToState(PasswordChanged e) async* {
+  Future<void> _mapPasswordChangedToState(
+      PasswordChanged e, Emitter<SignInState> emit) async {
     //generate PasswordChanged state
-    yield state.copyWith(
+    emit(state.copyWith(
       password: Password(e.passwordStr!),
       authFailureOrSuccessOption: none(),
-    );
+    ));
   }
 
-  Stream<SignInState> _mapSignInWithEmailAndPasswordPressedToState(
-      SignInWithEmailAndPasswordPressed e) async* {
+  Future<void> _mapSignInWithEmailAndPasswordPressedToState(
+      SignInWithEmailAndPasswordPressed e, Emitter<SignInState> emit) async{
     Either<AuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.emailAddress!.isValid();
@@ -87,34 +86,34 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     //check both valid
     if (isEmailValid) {
       //sumbit state generated >> show loading screen until data comming
-      yield state.copyWith(
+      emit( state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),
-      );
+      ));
       //USING REPOSITORY TO SIGNIN
       failureOrSuccess = await _authFacade.signInWithEmailAndPassword(
           emailAddress: state.emailAddress, password: state.password);
     }
     //SignInSucessOrFailure state generated
-    yield state.copyWith(
+    emit(state.copyWith(
       isSubmitting: false,
       showErrorMessages: true,
       authFailureOrSuccessOption: optionOf(failureOrSuccess),
-    );
+    ));
   }
 
-  Stream<SignInState> _mapSignInWithGooglePressedToState(
-      SignInWithGooglePressed e) async* {
+  Future<void> _mapSignInWithGooglePressedToState(
+      SignInWithGooglePressed e, Emitter<SignInState> emit) async {
     //sumbit state generated >> show loading screen until data comming
-    yield state.copyWith(
+    emit(state.copyWith(
       isSubmitting: true,
       authFailureOrSuccessOption: none(),
-    );
+    ));
     //USING REPOSITORY TO SIGNIN
     final failureOrSuccess = await _authFacade.signInWithGoogle();
     //SignInSucessOrFailure state generated
-    yield state.copyWith(
+    emit(state.copyWith(
         isSubmitting: false,
-        authFailureOrSuccessOption: some(failureOrSuccess));
+        authFailureOrSuccessOption: some(failureOrSuccess)));
   }
 }

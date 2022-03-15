@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:kt_dart/collection.dart';
+//import 'package:kt_dart/collection.dart';
 import 'package:note_touch/domain/core/value_objects.dart';
 import 'package:note_touch/domain/notes/note_enum.dart';
 import 'package:note_touch/domain/notes/value_objects.dart';

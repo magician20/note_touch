@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'theme_bloc.dart';
@@ -147,15 +148,14 @@ class _$ThemeChanged implements ThemeChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ThemeChanged &&
-            (identical(other.appTheme, appTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.appTheme, appTheme)));
+        (other.runtimeType == runtimeType &&
+            other is ThemeChanged &&
+            const DeepCollectionEquality().equals(other.appTheme, appTheme));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(appTheme);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(appTheme));
 
   @JsonKey(ignore: true)
   @override
@@ -223,7 +223,7 @@ abstract class ThemeChanged implements ThemeEvent {
   const factory ThemeChanged(AppTheme appTheme) = _$ThemeChanged;
 
   @override
-  AppTheme get appTheme => throw _privateConstructorUsedError;
+  AppTheme get appTheme;
   @override
   @JsonKey(ignore: true)
   $ThemeChangedCopyWith<ThemeChanged> get copyWith =>
@@ -330,15 +330,14 @@ class _$_ThemeState implements _ThemeState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ThemeState &&
-            (identical(other.themeData, themeData) ||
-                const DeepCollectionEquality()
-                    .equals(other.themeData, themeData)));
+        (other.runtimeType == runtimeType &&
+            other is _ThemeState &&
+            const DeepCollectionEquality().equals(other.themeData, themeData));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(themeData);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(themeData));
 
   @JsonKey(ignore: true)
   @override
@@ -350,7 +349,7 @@ abstract class _ThemeState implements ThemeState {
   const factory _ThemeState({ThemeData? themeData}) = _$_ThemeState;
 
   @override
-  ThemeData? get themeData => throw _privateConstructorUsedError;
+  ThemeData? get themeData;
   @override
   @JsonKey(ignore: true)
   _$ThemeStateCopyWith<_ThemeState> get copyWith =>

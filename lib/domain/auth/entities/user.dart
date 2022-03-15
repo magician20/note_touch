@@ -1,10 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+// ignore: unused_import
+import 'package:flutter/foundation.dart';
 import 'package:note_touch/domain/auth/validate/value_objects.dart';
 import 'package:note_touch/domain/core/value_objects.dart';
 
 
 part 'user.freezed.dart';
-//part 'user.g.dart';
 
 @freezed
 class User with _$User {

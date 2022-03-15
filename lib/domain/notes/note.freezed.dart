@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'note.dart';
@@ -205,32 +206,26 @@ class _$_Note extends _Note {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Note &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.body, body) ||
-                const DeepCollectionEquality().equals(other.body, body)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)) &&
-            (identical(other.noteStatus, noteStatus) ||
-                const DeepCollectionEquality()
-                    .equals(other.noteStatus, noteStatus)) &&
-            (identical(other.noteStat, noteStat) ||
-                const DeepCollectionEquality()
-                    .equals(other.noteStat, noteStat)));
+        (other.runtimeType == runtimeType &&
+            other is _Note &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.body, body) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
+            const DeepCollectionEquality()
+                .equals(other.noteStatus, noteStatus) &&
+            const DeepCollectionEquality().equals(other.noteStat, noteStat));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(body) ^
-      const DeepCollectionEquality().hash(color) ^
-      const DeepCollectionEquality().hash(noteStatus) ^
-      const DeepCollectionEquality().hash(noteStat);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(body),
+      const DeepCollectionEquality().hash(color),
+      const DeepCollectionEquality().hash(noteStatus),
+      const DeepCollectionEquality().hash(noteStat));
 
   @JsonKey(ignore: true)
   @override
@@ -249,17 +244,17 @@ abstract class _Note extends Note {
   const _Note._() : super._();
 
   @override
-  UniqueId? get id => throw _privateConstructorUsedError;
+  UniqueId? get id;
   @override //i can pass the id to UniqueId
-  StringSingleLine? get title => throw _privateConstructorUsedError;
+  StringSingleLine? get title;
   @override
-  NoteBody? get body => throw _privateConstructorUsedError;
+  NoteBody? get body;
   @override
-  NoteColor? get color => throw _privateConstructorUsedError;
+  NoteColor? get color;
   @override
-  NoteStatus? get noteStatus => throw _privateConstructorUsedError;
+  NoteStatus? get noteStatus;
   @override
-  NoteState? get noteStat => throw _privateConstructorUsedError;
+  NoteState? get noteStat;
   @override
   @JsonKey(ignore: true)
   _$NoteCopyWith<_Note> get copyWith => throw _privateConstructorUsedError;

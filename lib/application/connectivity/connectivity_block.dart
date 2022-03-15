@@ -13,30 +13,20 @@ part 'connectivity_state.dart';
 class ConnectivityBloc extends Bloc<ConnectivityEvent, ConnectivityState> {
   final IConnectivityFacade _connectFacade;
   StreamSubscription? _connectionChangeStream;
-
-  ConnectivityBloc(this._connectFacade) : super(const Initial()) {
-    _connectFacade.initialize();
-  }
-
-/*
-  @override
-  ConnectivityState get initialState => const ConnectivityState.initial();
-  */
-
-  @override
-  Stream<ConnectivityState> mapEventToState(ConnectivityEvent event) async* {
-    //only one event is here
-    yield* _mapCheckConnectivityToState();
-  }
-
   bool isOffline = false;
-  Stream<ConnectivityState> _mapCheckConnectivityToState() async* {
+
+  ConnectivityBloc(this._connectFacade) : super(ConnectivityState.initial()) {
+    _connectFacade.initialize();
+    on<ConnectivityCheckRequested>(_mapCheckConnectivityToState);
+  }
+
+  Future<void> _mapCheckConnectivityToState(e, emit) async {
     //check id user authed and it will return user or none
     //final _connectionChangeStream =await _connectFacade.connectionChange.listen(connectionChanged);
     if (!isOffline) {
-      yield const ConnectivityState.online();
+      emit(const ConnectivityState.online());
     } else {
-      yield const ConnectivityState.offline();
+      emit(const ConnectivityState.offline());
     }
   }
 

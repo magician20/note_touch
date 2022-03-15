@@ -1,3 +1,4 @@
+#Not used becs ineed to run services first like login auth, check net connection, create sqlite connection
 flutter_native_splash:
 
   # This package generates native code to customize Flutter's default white native splash screen
