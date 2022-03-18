@@ -37,7 +37,7 @@ class _HomePage extends State<HomePage> {
         },
         child: AutoTabsRouter(
           //not working for pageslist widget (cause nested route & lose state when size vhange from mobile to desktop)
-         // key: GlobalObjectKey("tabs-router"), 
+          key: GlobalObjectKey("tabs-router"),
           routes: const [
             PagesRoute(),
             ArchiveRoute(),
@@ -45,12 +45,12 @@ class _HomePage extends State<HomePage> {
             SettingsRoute(),
             AboutRoute()
           ],
-          builder: (context, childWidget, animation) {
-              // using read because we only use a value that never changes.
-             final scaffoldKey = context.read<DrawerControllerCubit>().scaffoldKey;
+          builder: (context, childWidget, animation) {    
+            // using read because we only use a value that never changes.
+            final scaffoldKey =context.read<DrawerControllerCubit>().scaffoldKey;
             return Scaffold(
               backgroundColor: Theme.of(context).bottomAppBarColor,
-              key:scaffoldKey ,
+              key: scaffoldKey,
               drawerEnableOpenDragGesture:
                   Responsive.isShowDrawerSize(context) ? false : true,
               drawer: AppDrawer(),
@@ -62,20 +62,15 @@ class _HomePage extends State<HomePage> {
                     children: [
                       if (Responsive.isShowDrawerSize(context))
                         Expanded(
-                          // flex: 1,
+                          flex: 1,
                           child: AppDrawer(),
                         ),
                       Expanded(
-                          // It takes 5/6 part of the screen
-                          flex: 5,
-                          //this hold appbar silver and body inside list
-                          child:
-                          // attaching a key to an existing widget, 
-                          //used here specific for the PagesList widget cause state removed when change screen size
-                          KeyedSubtree(
-                              key: GlobalObjectKey(childWidget.toString()),
-                              child: childWidget)
-                          ),
+                        // It takes 5/6 part of the screen
+                        flex: 5,
+                        //this hold appbar silver and body inside list
+                        child: childWidget,
+                      ),
                     ],
                   ),
                 ),

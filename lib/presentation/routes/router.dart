@@ -5,6 +5,7 @@ import 'package:note_touch/presentation/views/about/about_page.dart';
 import 'package:note_touch/presentation/views/archive/archive_page.dart';
 import 'package:note_touch/presentation/views/home/home_form_widget.dart';
 import 'package:note_touch/presentation/views/home/home_page.dart';
+import 'package:note_touch/presentation/views/home/wrapper_page_widget.dart';
 import 'package:note_touch/presentation/views/pages/page_form.dart';
 import 'package:note_touch/presentation/views/settings/settings_page.dart';
 import 'package:note_touch/presentation/views/sign_in/sign_in_page.dart';
@@ -48,7 +49,7 @@ import 'package:note_touch/presentation/views/sign_up/sign_up_page.dart';
       AutoRoute(
           path: 'pages',
           name: "PagesRoute",
-          page:EmptyRouterPage, //problem when navigate with drawer from sub tree
+          page:RouterPageWrapper, //problem when navigate with drawer from sub tree
           children: [
             //problem when navigate with drawer from sub tree when key can't be found
             AutoRoute(path: '', page: HomeFormWidget),

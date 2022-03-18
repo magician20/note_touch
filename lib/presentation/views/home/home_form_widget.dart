@@ -54,7 +54,7 @@ class _HomeFormWidgetState extends State<HomeFormWidget> {
       child: BlocProvider(
         create: (context) => GridviewCubit(),
         child: FloatingActionBar(
-          scaffoldKey: scaffoldKey, //null value can't open and close
+          scaffoldKey: scaffoldKey,
           child: notesList.isEmpty
               ? EmptyPageWidget()
               : Container(

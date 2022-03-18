@@ -43,8 +43,7 @@ class AuthFacade implements IAuthFacade {
 
     UserResponseModel response;
     try {
-      response =
-          await _authService.getSignedInUser('$BEARER$tokenValue');
+      response =await _authService.getSignedInUser('$BEARER$tokenValue');
     } on DioError catch (error) {
       return optionOf(null);
     }

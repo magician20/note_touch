@@ -12,6 +12,6 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Container(
        color: Colors.amberAccent[100],
-        child: Center(child: Text('Notes Page')));
+        child: Center(child: Text('About Page')));
   }
 }
