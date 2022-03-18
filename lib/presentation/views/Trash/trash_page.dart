@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TrashPage extends StatefulWidget {
-  TrashPage({Key? key}) : super(key: key);
+  const TrashPage({Key? key}) : super(key: key);
 
   @override
   _TrashPageState createState() => _TrashPageState();

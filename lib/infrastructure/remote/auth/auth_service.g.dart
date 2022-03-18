@@ -10,7 +10,7 @@ part of 'auth_service.dart';
 
 class _AuthService implements AuthService {
   _AuthService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://192.168.54.217:3000';
+    baseUrl ??= 'http://192.168.13.217:3000';
   }
 
   final Dio _dio;

@@ -10,15 +10,6 @@ class PagesGrid extends StatelessWidget {
     required this.notes,
   }) : super(key: key);
 
-  // static PagesGrid create({
-  //   Key? key,
-  //  required List<PageCard> notes,
-  //   // void Function(Note) onTap,
-  // }) => PagesGrid(
-  //   key: key,
-  //   notes: notes,
-  //   // onTap: onTap,
-  // );
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +21,8 @@ class PagesGrid extends StatelessWidget {
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 10.0),
       itemBuilder: (context, index) {
-        return notes[
-            index]; //new PageCard will be create here and pass the ID to show on the url
+       //new PageCard will be create here and pass the ID to show on the url 
+        return notes[index]; 
       },
     );
   }

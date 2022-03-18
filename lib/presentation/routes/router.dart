@@ -1,4 +1,3 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:note_touch/presentation/splash/splash_page.dart';
 import 'package:note_touch/presentation/views/Trash/trash_page.dart';
@@ -6,7 +5,6 @@ import 'package:note_touch/presentation/views/about/about_page.dart';
 import 'package:note_touch/presentation/views/archive/archive_page.dart';
 import 'package:note_touch/presentation/views/home/home_form_widget.dart';
 import 'package:note_touch/presentation/views/home/home_page.dart';
-import 'package:note_touch/presentation/views/pages/notes_wrapper_widget.dart';
 import 'package:note_touch/presentation/views/pages/page_form.dart';
 import 'package:note_touch/presentation/views/settings/settings_page.dart';
 import 'package:note_touch/presentation/views/sign_in/sign_in_page.dart';
@@ -20,12 +18,14 @@ import 'package:note_touch/presentation/views/sign_up/sign_up_page.dart';
     AutoRoute(
       path: "/splash",
       page: SplashPage,
+      maintainState: false,
       initial: true, // i can change the initial dynamic at the appWidget
     ),
 
     AutoRoute(
       path: "/signin",
       page: SignInPage,
+      maintainState: false,
       children: [
         RedirectRoute(path: '*', redirectTo: ''),
       ],
@@ -41,18 +41,19 @@ import 'package:note_touch/presentation/views/sign_up/sign_up_page.dart';
 
     //Home routes with a nested router (NEED TO ADD GUARD AND CHECK NAVIGATION)
     AutoRoute(
-     path: "/home",
-     page: HomePage, 
-     children: [
-      RedirectRoute(path: '', redirectTo: 'notes'),
+      path: "/home", 
+      page: HomePage, 
+      children: [
+      RedirectRoute(path: '', redirectTo: 'pages'),
       AutoRoute(
-          path: 'notes',
-          name: "NotesRoute",//<<<
-          page: NotesWrapperPage, //this class cause problem when navigate to page detail with id
+          path: 'pages',
+          name: "PagesRoute",
+          page:EmptyRouterPage, //problem when navigate with drawer from sub tree
           children: [
+            //problem when navigate with drawer from sub tree when key can't be found
             AutoRoute(path: '', page: HomeFormWidget),
             // add the guard here to check if the bookId exists first before pushing the page
-            AutoRoute(path: ':id',name: 'PageFormRoute', page: PageForm),//idk why 'PageFormRoute' not generated ??
+            AutoRoute(path: ':id',name: 'PageFormRoute', page: PageForm), //idk why 'PageFormRoute' not generated ??
             RedirectRoute(path: "*", redirectTo: ''),
           ]),
       AutoRoute(path: 'settings', page: SettingsPage),

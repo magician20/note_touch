@@ -10,20 +10,14 @@ class PagesList extends StatelessWidget {
     required this.notes,
   }) : super(key: key);
 
-  // static PagesList create({
-  //   Key? key,
-  //   //@required List<Note> notes,
-  // }) => PagesList(
-  //   key: key,
-  //  // notes: notes,
-  // );
 
   @override
   Widget build(BuildContext context) {
      return ListView.builder(
        itemCount: notes.length,
        itemBuilder: (context,i){
-         return notes[i];//new PageCard will be create here and pass the ID to show on the url
+         //new PageCard will be create here and pass the ID to show on the url
+         return notes[i];
        }
        );
   }

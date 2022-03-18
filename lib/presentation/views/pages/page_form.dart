@@ -33,8 +33,8 @@ class _PageFormState extends State<PageForm> {
                   tooltip: MaterialLocalizations.of(context).backButtonTooltip,
                   onPressed: () {
                     //AutoRouter.innerRouterOf(context, PageFormRoute.name)!.pop();//not work
-                    // context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.pop();
-                     context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.navigate(NotesRoute());
+                    //context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.pop();
+                    context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(PagesRoute.name)!.navigate(PagesRoute());
                     //context.tabsRouter..setActiveIndex(0)..innerRouterOf<StackRouter>(NotesRoute.name)!.removeLast();
                      
                     },

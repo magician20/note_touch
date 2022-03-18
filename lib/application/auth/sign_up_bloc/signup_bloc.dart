@@ -99,6 +99,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     //check all values(also first name /last name / phone number)
     final isEmailValid = state.emailAddress!.isValid();
     final isPasswordValid = state.password!.isValid();
+    
     final isFirstNameValid = state.firstName!.isValid();
     final isLastNameValid = state.lastName!.isValid();
     final isUserNameValid = isFirstNameValid && isLastNameValid;

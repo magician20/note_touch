@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_touch/application/auth/auth_bloc.dart';
+import 'package:note_touch/presentation/controllers/cubit/drawer_controller.dart';
 import 'package:note_touch/presentation/routes/router.gr.dart';
 import 'package:note_touch/presentation/widgets/drawer_widget.dart';
 
@@ -16,8 +17,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  //GlobalKey
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
@@ -27,7 +26,7 @@ class _HomePage extends State<HomePage> {
         listener: (context, state) {
           state.maybeMap(
             unauthenticated: (_) {
-              //didn't work for  mobile  & Web
+              //work for  mobile  & Web
               //clear the stack and push to page (worked for web)
               AutoRouter.of(context).popUntilRoot();
               AutoRouter.of(context).replaceAll([SignInRoute()]);
@@ -36,40 +35,49 @@ class _HomePage extends State<HomePage> {
             orElse: () {},
           );
         },
-        child: AutoTabsScaffold(
-          //scaffoldKey: _scaffoldKey,//not working
-          backgroundColor: Theme.of(context).bottomAppBarColor,
-          routes: [
-            NotesRoute(scaffoldKey: _scaffoldKey),
+        child: AutoTabsRouter(
+          //not working for pageslist widget (cause nested route & lose state when size vhange from mobile to desktop)
+         // key: GlobalObjectKey("tabs-router"), 
+          routes: const [
+            PagesRoute(),
             ArchiveRoute(),
             TrashRoute(),
             SettingsRoute(),
             AboutRoute()
           ],
           builder: (context, childWidget, animation) {
-            // final tabsRouter = AutoTabsRouter.of(context);
+              // using read because we only use a value that never changes.
+             final scaffoldKey = context.read<DrawerControllerCubit>().scaffoldKey;
             return Scaffold(
-              key: _scaffoldKey,
+              backgroundColor: Theme.of(context).bottomAppBarColor,
+              key:scaffoldKey ,
               drawerEnableOpenDragGesture:
                   Responsive.isShowDrawerSize(context) ? false : true,
               drawer: AppDrawer(),
-              body: SafeArea(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (Responsive.isShowDrawerSize(context))
+              body: FadeTransition(
+                opacity: animation,
+                child: SafeArea(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (Responsive.isShowDrawerSize(context))
+                        Expanded(
+                          // flex: 1,
+                          child: AppDrawer(),
+                        ),
                       Expanded(
-                        // flex: 1,
-                        child: AppDrawer(),
-                      ),
-                    Expanded(
-                        // It takes 5/6 part of the screen
-                        flex: 5,
-                        //this hold appbar silver and body inside list
-                        child: KeyedSubtree(
-                            key: GlobalObjectKey(childWidget.toString()),
-                            child: childWidget)),
-                  ],
+                          // It takes 5/6 part of the screen
+                          flex: 5,
+                          //this hold appbar silver and body inside list
+                          child:
+                          // attaching a key to an existing widget, 
+                          //used here specific for the PagesList widget cause state removed when change screen size
+                          KeyedSubtree(
+                              key: GlobalObjectKey(childWidget.toString()),
+                              child: childWidget)
+                          ),
+                    ],
+                  ),
                 ),
               ),
             );

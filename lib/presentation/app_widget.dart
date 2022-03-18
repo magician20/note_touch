@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_touch/application/auth/auth_bloc.dart';
 import 'package:note_touch/application/theme/theme_bloc.dart';
+import 'package:note_touch/presentation/controllers/cubit/drawer_controller.dart';
 import 'package:note_touch/presentation/routes/router.gr.dart';
 
 
@@ -26,6 +27,7 @@ class _AppState extends State<App> {
       providers: [
         BlocProvider(create: (_) => getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),),
         BlocProvider(create: (_) => getIt<ThemeBloc>()),
+        BlocProvider(create: (_) => getIt<DrawerControllerCubit>()), //need to revise the code
         //BlocProvider(create: (context) => getIt<GridviewCubit>()),
       ],
       //ThemeBloc at the Root LVL

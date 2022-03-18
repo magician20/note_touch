@@ -22,6 +22,6 @@ abstract class IAuthFacade {
     @required Password? password,
   });
   Future<Option<User>> getSignedInUser();
-  Future<Either<AuthFailure, Unit>> signInWithGoogle();//not used
   Future<void> signOut();
+  Future<Either<AuthFailure, Unit>> signInWithGoogle();//not used
 }

@@ -35,7 +35,7 @@ class _PageCardState extends State<PageCard> {
             // AutoRouter.of(context).innerRouterOf<StackRouter>(NotesRoute.name)!.navigate(PageFormRoute(id: index));
             context.tabsRouter
               ..setActiveIndex(0)
-              ..innerRouterOf<StackRouter>(NotesRoute.name)!//HomeFormWidget
+              ..innerRouterOf<StackRouter>(PagesRoute.name)!//HomeFormWidget
                   .push(PageFormRoute(id: widget.index));
           },
           child: Padding(

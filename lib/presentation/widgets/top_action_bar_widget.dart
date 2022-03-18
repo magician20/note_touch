@@ -26,7 +26,7 @@ class _TopActionBarState extends State<TopActionBar> {
       child: Card(
         elevation: 3,
         child: Container(
-         // padding: EdgeInsets.symmetric(vertical: 5.0),
+          // padding: EdgeInsets.symmetric(vertical: 5.0),
           child: Row(
             children: <Widget>[
               const SizedBox(width: 20),
@@ -59,8 +59,8 @@ class _TopActionBarState extends State<TopActionBar> {
                   return InkWell(
                     child: Icon(state ? view_grid : view_list,
                         color: Theme.of(context).primaryColor),
-                   // `true` to show notes in a GridView, a ListView otherwise.
-                    onTap: () => context.read<GridviewCubit>().gridOrList() ,
+                    // `true` to show notes in a GridView, a ListView otherwise.
+                    onTap: () => context.read<GridviewCubit>().gridOrList(),
                   );
                 },
               ),
