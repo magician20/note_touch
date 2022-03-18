@@ -45,7 +45,9 @@ class _HomePage extends State<HomePage> {
             SettingsRoute(),
             AboutRoute()
           ],
-          builder: (context, childWidget, animation) {    
+          builder: (context, childWidget, animation) {
+            // attaching a key to an existing widget,used here specific for the PagesList widget cause state removed when change screen size
+           final wrapChildWidget = KeyedSubtree(key: GlobalObjectKey("router_key"),child: childWidget);
             // using read because we only use a value that never changes.
             final scaffoldKey =context.read<DrawerControllerCubit>().scaffoldKey;
             return Scaffold(
@@ -69,7 +71,7 @@ class _HomePage extends State<HomePage> {
                         // It takes 5/6 part of the screen
                         flex: 5,
                         //this hold appbar silver and body inside list
-                        child: childWidget,
+                        child: wrapChildWidget, //lose state with web
                       ),
                     ],
                   ),
