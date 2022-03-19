@@ -18,7 +18,7 @@ class _EnterFieldPasswordState extends State<EnterFieldPassword> {
   @override
   void initState() {
     super.initState();
-    _passwordVisible = false;
+    _passwordVisible = true;
   }
 
   // Toggles the password show status
