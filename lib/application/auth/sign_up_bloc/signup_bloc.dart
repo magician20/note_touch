@@ -13,7 +13,6 @@ part 'signup_bloc.freezed.dart';
 part 'signup_event.dart';
 part 'signup_state.dart';
 
-// ignore: constant_identifier_names
 const DEFAULT_INPUTLOGIN_DEBOUNCE = 300;
 
 @injectable
@@ -21,14 +20,21 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final IAuthFacade _authFacade;
 
   SignUpBloc(this._authFacade) : super(SignUpState.initial()) {
-    on<EmailChanged>(_mapEmailChangedToState);
-    on<PasswordChanged>(_mapPasswordChangedToState);
-    on<FirstNameChanged>(_mapUserFirstNameChangedToState);
-    on<LastNameChanged>(_mapUserLastNameChangedToState);
+    on<EmailChanged>(_mapEmailChangedToState,
+        transformer: debounceTransformer(
+            const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE)));
+    on<PasswordChanged>(_mapPasswordChangedToState,
+        transformer: debounceTransformer(
+            const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE)));
+    on<FirstNameChanged>(_mapUserFirstNameChangedToState,
+        transformer: debounceTransformer(
+            const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE)));
+    on<LastNameChanged>(_mapUserLastNameChangedToState,
+        transformer: debounceTransformer(
+            const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE)));
     on<RegisterWithEmailAndPasswordPressed>(
         _mapRegisterWithEmailAndPasswordPressedToState);
   }
-
 
 /*
  * each time the user changes the text input, a new request is sent. So when the user types the 
@@ -36,28 +42,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
  * this situation is to wait for a small amount of time and cancel the previous request when 
  * a new one is send This method is called (debounce) >> RXDart
 */
-  // @override
-  // Stream<Transition<SignUpEvent, SignUpState>> transformEvents(Stream<SignUpEvent> events, transitionFn) {
-  //   final nonDebounceStream = events.where((event) {
-  //     return event is! EmailChanged &&
-  //         event is! PasswordChanged &&
-  //         event is! FirstNameChanged &&
-  //         event is! LastNameChanged;
-  //   });
-  //   final debounceStream = events.where((event) {
-  //     return event is EmailChanged ||
-  //         event is PasswordChanged ||
-  //         event is FirstNameChanged ||
-  //         event is LastNameChanged;
-  //   }).debounceTime(const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE));
-  //   return super.transformEvents(
-  //     nonDebounceStream.mergeWith([debounceStream]),
-  //     transitionFn,
-  //   );
-  // }
+  EventTransformer<Event> debounceTransformer<Event>(Duration duration) {
+    return (events, mapper) {
+      return events.debounceTime(duration).switchMap(mapper);
+    };
+  }
 
-
- Future<void> _mapEmailChangedToState(
+  Future<void> _mapEmailChangedToState(
       EmailChanged e, Emitter<SignUpState> emit) async {
     //generate EmailaddressChanged state
     emit(state.copyWith(
@@ -99,7 +90,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     //check all values(also first name /last name / phone number)
     final isEmailValid = state.emailAddress!.isValid();
     final isPasswordValid = state.password!.isValid();
-    
+
     final isFirstNameValid = state.firstName!.isValid();
     final isLastNameValid = state.lastName!.isValid();
     final isUserNameValid = isFirstNameValid && isLastNameValid;

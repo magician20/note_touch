@@ -13,7 +13,6 @@ part 'signin_bloc.freezed.dart';
 part 'signin_event.dart';
 part 'signin_state.dart';
 
-// ignore: constant_identifier_names
 const DEFAULT_INPUTLOGIN_DEBOUNCE = 300;
 
 @injectable
@@ -21,8 +20,12 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthFacade _authFacade;
 
   SignInBloc(this._authFacade) : super(SignInState.initial()) {
-    on<EmailChanged>(_mapEmailChangedToState);
-    on<PasswordChanged>(_mapPasswordChangedToState);
+    on<EmailChanged>(_mapEmailChangedToState,
+        transformer: debounceTransformer(
+            const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE)));
+    on<PasswordChanged>(_mapPasswordChangedToState,
+        transformer: debounceTransformer(
+            const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE)));
     on<SignInWithEmailAndPasswordPressed>(
         _mapSignInWithEmailAndPasswordPressedToState);
     on<SignInWithGooglePressed>(_mapSignInWithGooglePressedToState);
@@ -30,10 +33,9 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
   @override
   void onTransition(Transition<SignInEvent, SignInState> transition) {
-    print(transition);
     super.onTransition(transition);
+    print(transition);
   }
-
 
 /*
  * each time the user changes the text input, a new request is sent. So when the user types the 
@@ -41,20 +43,11 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
  * this situation is to wait for a small amount of time and cancel the previous request when 
  * a new one is send This method is called (debounce)>>RXDart
 */
-  // Stream<Transition<SignInEvent, SignInState>> transformEvents(
-  //     Stream<SignInEvent> events, transitionFn) {
-  //   final nonDebounceStream = events.where((event) {
-  //     return event is! EmailChanged && event is! PasswordChanged;
-  //   });
-  //   final debounceStream = events.where((event) {
-  //     return event is EmailChanged || event is PasswordChanged;
-  //   }).debounceTime(const Duration(milliseconds: DEFAULT_INPUTLOGIN_DEBOUNCE));
-  //   return super.transformEvents(
-  //     nonDebounceStream.mergeWith([debounceStream]),
-  //     transitionFn,
-  //   );
-  // }
-
+  EventTransformer<Event> debounceTransformer<Event>(Duration duration) {
+    return (events, mapper) {
+      return events.debounceTime(duration).switchMap(mapper);
+    };
+  }
 
   //*********************Implemention for generate Sates*************/
   Future<void> _mapEmailChangedToState(
@@ -76,7 +69,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   }
 
   Future<void> _mapSignInWithEmailAndPasswordPressedToState(
-      SignInWithEmailAndPasswordPressed e, Emitter<SignInState> emit) async{
+      SignInWithEmailAndPasswordPressed e, Emitter<SignInState> emit) async {
     Either<AuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.emailAddress!.isValid();
@@ -85,7 +78,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     //check both valid
     if (isEmailValid) {
       //sumbit state generated >> show loading screen until data comming
-      emit( state.copyWith(
+      emit(state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),
       ));
