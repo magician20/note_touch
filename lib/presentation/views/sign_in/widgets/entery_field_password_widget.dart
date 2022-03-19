@@ -13,6 +13,21 @@ class EnterFieldPassword extends StatefulWidget {
 }
 
 class _EnterFieldPasswordState extends State<EnterFieldPassword> {
+  late bool _passwordVisible;
+
+  @override
+  void initState() {
+    super.initState();
+    _passwordVisible = false;
+  }
+
+  // Toggles the password show status
+  void _toggle() {
+    setState(() {
+      _passwordVisible = !_passwordVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const String title = "Password";
@@ -36,8 +51,12 @@ class _EnterFieldPasswordState extends State<EnterFieldPassword> {
               icon: Icon(
                 Icons.lock,
               ),
-              suffixIcon: Icon(
-                Icons.visibility,
+              suffixIcon: IconButton(
+                icon: Icon(
+                  _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                  color: Theme.of(context).primaryColorLight,
+                ),
+                onPressed: _toggle,
               ),
               hintText: "Enter your ${title.toLowerCase()}",
               border: InputBorder.none,
@@ -52,12 +71,12 @@ class _EnterFieldPasswordState extends State<EnterFieldPassword> {
             ),
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: widget._passwordController,
-            obscureText: true,
+            obscureText: _passwordVisible,
             validator: (value) {
-                  //  if ( value!.isEmpty) {
-                  //   return "Empty Password";
-                  //  }
-                  //  return  null;
+              //  if ( value!.isEmpty) {
+              //   return "Empty Password";
+              //  }
+              //  return  null;
               return context.read<SignInBloc>().state.password!.value.fold(
                     (f) => f.maybeWhen(
                       empty: (_) => 'Empty Password', //required

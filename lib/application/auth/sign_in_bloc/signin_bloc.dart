@@ -41,7 +41,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
  * this situation is to wait for a small amount of time and cancel the previous request when 
  * a new one is send This method is called (debounce)>>RXDart
 */
-  // @override
   // Stream<Transition<SignInEvent, SignInState>> transformEvents(
   //     Stream<SignInEvent> events, transitionFn) {
   //   final nonDebounceStream = events.where((event) {
