@@ -12,7 +12,6 @@ class AvatarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var assetImage = AssetImage('assets/icon/icon_app.png');
     return Container(
-      // width: 100,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
@@ -29,7 +28,7 @@ class AvatarWidget extends StatelessWidget {
             }
           },
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
           itemBuilder: (BuildContext context) {
             return [
@@ -51,7 +50,7 @@ class AvatarWidget extends StatelessWidget {
             foregroundImage: assetImage,
             backgroundColor: Theme.of(context).primaryColorLight,
             // ignore: unnecessary_null_comparison
-            child: assetImage == null ? const Icon(Icons.face) : Container(),
+            child: assetImage == null ?  Expanded(child: Icon(Icons.face)) : Container(),
           )),
     );
   }

@@ -48,6 +48,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     };
   }
 
+//*********************Implemention for generate States*************/
   Future<void> _mapEmailChangedToState(
       EmailChanged e, Emitter<SignUpState> emit) async {
     //generate EmailaddressChanged state

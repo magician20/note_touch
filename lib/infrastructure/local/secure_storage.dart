@@ -3,23 +3,26 @@ import 'dart:convert' show json, base64, ascii;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 
-//const KEYCSRF = "jwt";
 
 @injectable
 class SecureStorage {
   final _storage = FlutterSecureStorage();
+  //Options
+  final androidOptions = const AndroidOptions(
+    encryptedSharedPreferences: true,
+  );
+  final iOSOptions = IOSOptions(accessibility: IOSAccessibility.first_unlock);
 
-  Future<void> writeSecureData(String key, String value) async {
-    return _storage.write(key: key, value: value);
+  Future<void> writeSecureData(String key, String value) {
+    return _storage.write(key: key, value: value,iOptions: iOSOptions,aOptions:androidOptions );
   }
 
-  Future<String?> readSecureData(String key) async {
-    var readData = await _storage.read(key: key);
-    return readData;
+  Future<String?> readSecureData(String key) {
+    return _storage.read(key: key,iOptions: iOSOptions,aOptions:androidOptions);
   }
 
-  Future<void> deleteSecureData(String key) async {
-    return await _storage.delete(key: key);
+  Future<void> deleteSecureData(String key) {
+    return _storage.delete(key: key,iOptions: iOSOptions,aOptions:androidOptions);
   }
 
   ///False mean not valid token, (also we can use Either here)
@@ -61,9 +64,9 @@ class SecureStorage {
             .isAfter(DateTime.now())) {
           //token valide
           await writeSecureData(key, value);
-          return 1; 
+          return 1;
         }
-        //token not valide
+        //token not valid
       }
     }
     //token not valide

@@ -31,12 +31,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     on<SignInWithGooglePressed>(_mapSignInWithGooglePressedToState);
   }
 
-  @override
-  void onTransition(Transition<SignInEvent, SignInState> transition) {
-    super.onTransition(transition);
-    print(transition);
-  }
-
 /*
  * each time the user changes the text input, a new request is sent. So when the user types the 
  * email quickly there will be as many requests as the letters this title contains. good practice in
@@ -49,7 +43,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     };
   }
 
-  //*********************Implemention for generate Sates*************/
+  //*********************Implemention for generate States*************/
   Future<void> _mapEmailChangedToState(
       EmailChanged e, Emitter<SignInState> emit) async {
     //generate EmailaddressChanged state

@@ -45,10 +45,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i12.AuthService>(() => _i12.AuthService(get<_i4.Dio>()));
   gh.factory<_i13.ConnectivityBloc>(
       () => _i13.ConnectivityBloc(get<_i7.IConnectivityFacade>()));
-  gh.lazySingleton<_i14.IAuthFacade>(() => _i15.AuthFacade(
-      get<_i12.AuthService>(),
-      get<_i9.SecureStorage>(),
-      get<_i11.WebStorage>()));
+  gh.lazySingleton<_i14.IAuthFacade>(
+      () => _i15.AuthFacade(get<_i12.AuthService>(), get<_i9.SecureStorage>()));
   gh.factory<_i16.SignInBloc>(() => _i16.SignInBloc(get<_i14.IAuthFacade>()));
   gh.factory<_i17.SignUpBloc>(() => _i17.SignUpBloc(get<_i14.IAuthFacade>()));
   gh.factory<_i18.AuthBloc>(() => _i18.AuthBloc(get<_i14.IAuthFacade>()));

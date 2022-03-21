@@ -6,7 +6,7 @@ import 'package:note_touch/domain/notes/value_objects.dart';
 part 'note_label.freezed.dart';
 
 @freezed
-abstract class NoteLabel with _$NoteLabel {
+class NoteLabel with _$NoteLabel {
 
   const factory NoteLabel(
     LabelName label, {

@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.note_touch">
    <application
+        android:allowBackup="true" 
+        android:fullBackupContent="@xml/backup_rules"
         android:label="Note Touch"
         android:icon="@mipmap/ic_launcher">
         <activity
