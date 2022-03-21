@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:note_touch/domain/core/value_objects.dart';
-import 'package:note_touch/domain/notes/value_objects.dart';
+import 'package:note_touch/domain/notes/validate/value_objects.dart';
 
 
 part 'note_label.freezed.dart';

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:note_touch/domain/notes/note.dart';
-import 'package:note_touch/domain/notes/note_failure.dart';
+import 'package:note_touch/domain/notes/entities/note.dart';
+import 'package:note_touch/domain/notes/repository/note_failure.dart';
 
 
 //more update depend on backend

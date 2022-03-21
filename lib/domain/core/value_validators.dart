@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:note_touch/domain/notes/note_enum.dart';
+import 'package:note_touch/domain/notes/repository/note_enum.dart';
 
 
 import 'failures.dart';
