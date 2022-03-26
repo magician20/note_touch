@@ -8,19 +8,21 @@ import 'package:dio/dio.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/auth/auth_bloc.dart' as _i18;
-import 'application/auth/sign_in_bloc/signin_bloc.dart' as _i16;
-import 'application/auth/sign_up_bloc/signup_bloc.dart' as _i17;
+import 'application/auth/auth_bloc.dart' as _i20;
+import 'application/auth/sign_in_bloc/signin_bloc.dart' as _i18;
+import 'application/auth/sign_up_bloc/signup_bloc.dart' as _i19;
 import 'application/connectivity/connectivity_block.dart' as _i13;
 import 'application/theme/theme_bloc.dart' as _i10;
 import 'domain/auth/repository/i_auth_facade.dart' as _i14;
 import 'domain/local/i_connectivity_facade.dart' as _i7;
+import 'domain/pages/repository/i_page_facade.dart' as _i16;
 import 'infrastructure/core/connection_status.dart' as _i8;
 import 'infrastructure/local/html_local_storage.dart' as _i11;
 import 'infrastructure/local/secure_storage.dart' as _i9;
 import 'infrastructure/remote/auth/auth_facade.dart' as _i15;
 import 'infrastructure/remote/auth/auth_service.dart' as _i12;
-import 'infrastructure/remote/core/injectable_module.dart' as _i19;
+import 'infrastructure/remote/core/injectable_module.dart' as _i21;
+import 'infrastructure/remote/notes/note_facade.dart' as _i17;
 import 'presentation/controllers/cubit/check_box_cubit.dart' as _i3;
 import 'presentation/controllers/cubit/drawer_controller.dart' as _i5;
 import 'presentation/controllers/cubit/gridview_cubit.dart'
@@ -47,10 +49,12 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i13.ConnectivityBloc(get<_i7.IConnectivityFacade>()));
   gh.lazySingleton<_i14.IAuthFacade>(
       () => _i15.AuthFacade(get<_i12.AuthService>(), get<_i9.SecureStorage>()));
-  gh.factory<_i16.SignInBloc>(() => _i16.SignInBloc(get<_i14.IAuthFacade>()));
-  gh.factory<_i17.SignUpBloc>(() => _i17.SignUpBloc(get<_i14.IAuthFacade>()));
-  gh.factory<_i18.AuthBloc>(() => _i18.AuthBloc(get<_i14.IAuthFacade>()));
+  gh.lazySingleton<_i16.IPageFacade>(
+      () => _i17.PageFacade(get<_i12.AuthService>(), get<_i9.SecureStorage>()));
+  gh.factory<_i18.SignInBloc>(() => _i18.SignInBloc(get<_i14.IAuthFacade>()));
+  gh.factory<_i19.SignUpBloc>(() => _i19.SignUpBloc(get<_i14.IAuthFacade>()));
+  gh.factory<_i20.AuthBloc>(() => _i20.AuthBloc(get<_i14.IAuthFacade>()));
   return get;
 }
 
-class _$RegisterModule extends _i19.RegisterModule {}
+class _$RegisterModule extends _i21.RegisterModule {}

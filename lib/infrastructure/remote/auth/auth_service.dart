@@ -8,7 +8,7 @@ import 'models/auth_built_model.dart';
 part 'auth_service.g.dart';
 
 @lazySingleton 
-@RestApi(baseUrl: AUTH_BASE_URL_External) //baseUrl: '/auth'
+@RestApi(baseUrl: AUTH_BASE_URL_External) 
 abstract class AuthService {
   @factoryMethod
   factory AuthService(Dio dio) = _AuthService;//{String baseUrl} cause problem for injector file

@@ -40,7 +40,9 @@ dependencies:
   uuid: ^3.0.6
   retrofit: ^3.0.1+1
   dio: ^4.0.4
+  #add Collection immutable 
   kt_dart: ^0.10.0
+  built_collection: ^5.1.1
 
   #don't update color picker 0.6.0 until no more bug with new version
   flutter_colorpicker: ^1.0.3

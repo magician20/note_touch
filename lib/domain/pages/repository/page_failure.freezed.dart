@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'note_failure.dart';
+part of 'page_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$NoteFailureTearOff {
-  const _$NoteFailureTearOff();
+class _$PageFailureTearOff {
+  const _$PageFailureTearOff();
 
   _Unexpected unexpected() {
     return const _Unexpected();
@@ -26,35 +26,35 @@ class _$NoteFailureTearOff {
     return const _InsufficientPermission();
   }
 
-  _UnableToUpdate unableToUpdate() {
+  _UnableToUpdate unableToUpdatePage() {
     return const _UnableToUpdate();
   }
 }
 
 /// @nodoc
-const $NoteFailure = _$NoteFailureTearOff();
+const $PageFailure = _$PageFailureTearOff();
 
 /// @nodoc
-mixin _$NoteFailure {
+mixin _$PageFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermission,
-    required TResult Function() unableToUpdate,
+    required TResult Function() unableToUpdatePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,40 +63,40 @@ mixin _$NoteFailure {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdatePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NoteFailureCopyWith<$Res> {
-  factory $NoteFailureCopyWith(
-          NoteFailure value, $Res Function(NoteFailure) then) =
-      _$NoteFailureCopyWithImpl<$Res>;
+abstract class $PageFailureCopyWith<$Res> {
+  factory $PageFailureCopyWith(
+          PageFailure value, $Res Function(PageFailure) then) =
+      _$PageFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoteFailureCopyWithImpl<$Res> implements $NoteFailureCopyWith<$Res> {
-  _$NoteFailureCopyWithImpl(this._value, this._then);
+class _$PageFailureCopyWithImpl<$Res> implements $PageFailureCopyWith<$Res> {
+  _$PageFailureCopyWithImpl(this._value, this._then);
 
-  final NoteFailure _value;
+  final PageFailure _value;
   // ignore: unused_field
-  final $Res Function(NoteFailure) _then;
+  final $Res Function(PageFailure) _then;
 }
 
 /// @nodoc
@@ -107,7 +107,7 @@ abstract class _$UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$NoteFailureCopyWithImpl<$Res>
+class __$UnexpectedCopyWithImpl<$Res> extends _$PageFailureCopyWithImpl<$Res>
     implements _$UnexpectedCopyWith<$Res> {
   __$UnexpectedCopyWithImpl(
       _Unexpected _value, $Res Function(_Unexpected) _then)
@@ -124,7 +124,7 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   String toString() {
-    return 'NoteFailure.unexpected()';
+    return 'PageFailure.unexpected()';
   }
 
   @override
@@ -141,7 +141,7 @@ class _$_Unexpected implements _Unexpected {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermission,
-    required TResult Function() unableToUpdate,
+    required TResult Function() unableToUpdatePage,
   }) {
     return unexpected();
   }
@@ -151,7 +151,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
   }) {
     return unexpected?.call();
   }
@@ -161,7 +161,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -176,7 +176,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdatePage,
   }) {
     return unexpected(this);
   }
@@ -186,7 +186,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
   }) {
     return unexpected?.call(this);
   }
@@ -196,7 +196,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -206,7 +206,7 @@ class _$_Unexpected implements _Unexpected {
   }
 }
 
-abstract class _Unexpected implements NoteFailure {
+abstract class _Unexpected implements PageFailure {
   const factory _Unexpected() = _$_Unexpected;
 }
 
@@ -219,7 +219,7 @@ abstract class _$InsufficientPermissionCopyWith<$Res> {
 
 /// @nodoc
 class __$InsufficientPermissionCopyWithImpl<$Res>
-    extends _$NoteFailureCopyWithImpl<$Res>
+    extends _$PageFailureCopyWithImpl<$Res>
     implements _$InsufficientPermissionCopyWith<$Res> {
   __$InsufficientPermissionCopyWithImpl(_InsufficientPermission _value,
       $Res Function(_InsufficientPermission) _then)
@@ -236,7 +236,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   String toString() {
-    return 'NoteFailure.insufficientPermission()';
+    return 'PageFailure.insufficientPermission()';
   }
 
   @override
@@ -253,7 +253,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermission,
-    required TResult Function() unableToUpdate,
+    required TResult Function() unableToUpdatePage,
   }) {
     return insufficientPermission();
   }
@@ -263,7 +263,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
   }) {
     return insufficientPermission?.call();
   }
@@ -273,7 +273,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
     required TResult orElse(),
   }) {
     if (insufficientPermission != null) {
@@ -288,7 +288,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdatePage,
   }) {
     return insufficientPermission(this);
   }
@@ -298,7 +298,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
   }) {
     return insufficientPermission?.call(this);
   }
@@ -308,7 +308,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
     required TResult orElse(),
   }) {
     if (insufficientPermission != null) {
@@ -318,7 +318,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   }
 }
 
-abstract class _InsufficientPermission implements NoteFailure {
+abstract class _InsufficientPermission implements PageFailure {
   const factory _InsufficientPermission() = _$_InsufficientPermission;
 }
 
@@ -331,7 +331,7 @@ abstract class _$UnableToUpdateCopyWith<$Res> {
 
 /// @nodoc
 class __$UnableToUpdateCopyWithImpl<$Res>
-    extends _$NoteFailureCopyWithImpl<$Res>
+    extends _$PageFailureCopyWithImpl<$Res>
     implements _$UnableToUpdateCopyWith<$Res> {
   __$UnableToUpdateCopyWithImpl(
       _UnableToUpdate _value, $Res Function(_UnableToUpdate) _then)
@@ -348,7 +348,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   String toString() {
-    return 'NoteFailure.unableToUpdate()';
+    return 'PageFailure.unableToUpdatePage()';
   }
 
   @override
@@ -365,9 +365,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermission,
-    required TResult Function() unableToUpdate,
+    required TResult Function() unableToUpdatePage,
   }) {
-    return unableToUpdate();
+    return unableToUpdatePage();
   }
 
   @override
@@ -375,9 +375,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
   }) {
-    return unableToUpdate?.call();
+    return unableToUpdatePage?.call();
   }
 
   @override
@@ -385,11 +385,11 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
-    TResult Function()? unableToUpdate,
+    TResult Function()? unableToUpdatePage,
     required TResult orElse(),
   }) {
-    if (unableToUpdate != null) {
-      return unableToUpdate();
+    if (unableToUpdatePage != null) {
+      return unableToUpdatePage();
     }
     return orElse();
   }
@@ -400,9 +400,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToUpdate value) unableToUpdatePage,
   }) {
-    return unableToUpdate(this);
+    return unableToUpdatePage(this);
   }
 
   @override
@@ -410,9 +410,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
   }) {
-    return unableToUpdate?.call(this);
+    return unableToUpdatePage?.call(this);
   }
 
   @override
@@ -420,16 +420,16 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToUpdate value)? unableToUpdatePage,
     required TResult orElse(),
   }) {
-    if (unableToUpdate != null) {
-      return unableToUpdate(this);
+    if (unableToUpdatePage != null) {
+      return unableToUpdatePage(this);
     }
     return orElse();
   }
 }
 
-abstract class _UnableToUpdate implements NoteFailure {
+abstract class _UnableToUpdate implements PageFailure {
   const factory _UnableToUpdate() = _$_UnableToUpdate;
 }

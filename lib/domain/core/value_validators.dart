@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:note_touch/domain/notes/repository/note_enum.dart';
+import 'package:note_touch/domain/pages/repository/page_enum.dart';
 
 
 import 'failures.dart';
@@ -77,7 +77,7 @@ Either<ValueFailure<String>, String> validateRegisterName(String? input) {
   return right(input);
 }
 
-/// *********************************** NOTE ********************************************* */
+/// *********************************** Pages ********************************************* */
 
 Either<ValueFailure<String>, String> validateMaxStringLength(
   String input,
@@ -108,7 +108,7 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validateNoteStatus(String input) {
+Either<ValueFailure<String>, String> validatePageStatus(String input) {
   // get all the values of the enums
   for (TaskStatus status in TaskStatus.values) {
     if (status.inString == input) {
@@ -118,9 +118,9 @@ Either<ValueFailure<String>, String> validateNoteStatus(String input) {
   return left(ValueFailure.invalidStatus(input));
 }
 
-Either<ValueFailure<String>, String> validateNoteState(String input) {
+Either<ValueFailure<String>, String> validatePageState(String input) {
   // get all the values of the enums
-  for (NoteStates state in NoteStates.values) {
+  for (PageStates state in PageStates.values) {
     if (state.inString == input) {
       return right(input);
     }
