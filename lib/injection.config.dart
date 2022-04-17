@@ -22,7 +22,7 @@ import 'infrastructure/local/secure_storage.dart' as _i9;
 import 'infrastructure/remote/auth/auth_facade.dart' as _i15;
 import 'infrastructure/remote/auth/auth_service.dart' as _i12;
 import 'infrastructure/remote/core/injectable_module.dart' as _i21;
-import 'infrastructure/remote/notes/note_facade.dart' as _i17;
+import 'infrastructure/remote/pages/page_facade.dart' as _i17;
 import 'presentation/controllers/cubit/check_box_cubit.dart' as _i3;
 import 'presentation/controllers/cubit/drawer_controller.dart' as _i5;
 import 'presentation/controllers/cubit/gridview_cubit.dart'

@@ -6,7 +6,8 @@ class RouterPageWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // attaching a key to an existing widget,used here specific for the PagesList widget cause state removed when change screen size
+    // attaching a key to an existing widget,used here specific for the PagesList widget
+    // bcause state removed when change screen size
     // final wrapper =KeyedSubtree(key:GlobalObjectKey("PageWrapper") ,child: AutoRouter()) ;
     return AutoRouter(key: GlobalObjectKey("PageWrapper"));
   }

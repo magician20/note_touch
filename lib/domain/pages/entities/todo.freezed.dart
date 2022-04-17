@@ -18,7 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TodoTearOff {
   const _$TodoTearOff();
 
-  _Todo call({BlockDetails? details, StringSingleLine? content, bool? done}) {
+  _Todo call(
+      {required BlockDetails? details,
+      required StringSingleLine? content,
+      required bool? done}) {
     return _Todo(
       details: details,
       content: content,
@@ -137,7 +140,8 @@ class __$TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Todo with DiagnosticableTreeMixin implements _Todo {
-  const _$_Todo({this.details, this.content, this.done});
+  const _$_Todo(
+      {required this.details, required this.content, required this.done});
 
   @override
   final BlockDetails? details;
@@ -186,7 +190,9 @@ class _$_Todo with DiagnosticableTreeMixin implements _Todo {
 
 abstract class _Todo implements Todo {
   const factory _Todo(
-      {BlockDetails? details, StringSingleLine? content, bool? done}) = _$_Todo;
+      {required BlockDetails? details,
+      required StringSingleLine? content,
+      required bool? done}) = _$_Todo;
 
   @override
   BlockDetails? get details;

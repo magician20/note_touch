@@ -8,7 +8,7 @@ part 'tag.freezed.dart';
 @freezed
 class Tag with _$Tag implements Block{
   factory Tag({
-    @required BlockDetails? details,
-    @required LabelName? content,
+    required BlockDetails? details,
+    required LabelName? content,
   }) = _Tag;
 }

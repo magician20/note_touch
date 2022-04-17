@@ -19,11 +19,11 @@ class _$BlockDetailsTearOff {
   const _$BlockDetailsTearOff();
 
   _BlockDetails call(
-      {UniqueId? id,
-      num? order,
-      num? pageId,
-      DateTime? created_at,
-      DateTime? updated_at}) {
+      {required UniqueId? id,
+      required num? order,
+      required num? pageId,
+      required DateTime? created_at,
+      required DateTime? updated_at}) {
     return _BlockDetails(
       id: id,
       order: order,
@@ -167,7 +167,11 @@ class __$BlockDetailsCopyWithImpl<$Res> extends _$BlockDetailsCopyWithImpl<$Res>
 
 class _$_BlockDetails with DiagnosticableTreeMixin implements _BlockDetails {
   _$_BlockDetails(
-      {this.id, this.order, this.pageId, this.created_at, this.updated_at});
+      {required this.id,
+      required this.order,
+      required this.pageId,
+      required this.created_at,
+      required this.updated_at});
 
   @override
   final UniqueId? id;
@@ -228,11 +232,11 @@ class _$_BlockDetails with DiagnosticableTreeMixin implements _BlockDetails {
 
 abstract class _BlockDetails implements BlockDetails {
   factory _BlockDetails(
-      {UniqueId? id,
-      num? order,
-      num? pageId,
-      DateTime? created_at,
-      DateTime? updated_at}) = _$_BlockDetails;
+      {required UniqueId? id,
+      required num? order,
+      required num? pageId,
+      required DateTime? created_at,
+      required DateTime? updated_at}) = _$_BlockDetails;
 
   @override
   UniqueId? get id;

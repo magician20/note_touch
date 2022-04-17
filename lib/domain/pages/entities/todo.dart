@@ -9,9 +9,9 @@ part 'todo.freezed.dart';
 @freezed
 class Todo with _$Todo implements Block {
   const factory Todo({
-    @required BlockDetails? details,
-    @required StringSingleLine? content,
-    @required bool? done,
+    required BlockDetails? details,
+    required StringSingleLine? content,
+    required bool? done,
   }) = _Todo;
 
   // factory Todo.empty() => Todo(

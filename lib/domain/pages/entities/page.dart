@@ -11,13 +11,13 @@ part 'page.freezed.dart';
 class Page with _$Page {
   factory Page({
     UniqueId? id, //i can pass the id to UniqueId
-    @required PageTitle? title,
-    @required PageColor? color,
-    @required PageStatus? status,
-    @required PageState? state,
-    @required BuiltList<Block>? block,//weird
-    @required DateTime? created_at,
-    @required DateTime? updated_at,
+    required PageTitle? title,
+    required PageColor? color,
+    required PageStatus? status,
+    required PageState? state,
+    required BuiltList<Block>? block,//weird
+    required DateTime? created_at,
+    required DateTime? updated_at,
   }) = _Page;
 
   //used to create empty Page

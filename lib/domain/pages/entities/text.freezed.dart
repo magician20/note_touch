@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TextTearOff {
   const _$TextTearOff();
 
-  _Text call({BlockDetails? details, TextBody? content}) {
+  _Text call({required BlockDetails? details, required TextBody? content}) {
     return _Text(
       details: details,
       content: content,
@@ -125,7 +125,7 @@ class __$TextCopyWithImpl<$Res> extends _$TextCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Text with DiagnosticableTreeMixin implements _Text {
-  _$_Text({this.details, this.content});
+  _$_Text({required this.details, required this.content});
 
   @override
   final BlockDetails? details;
@@ -168,7 +168,8 @@ class _$_Text with DiagnosticableTreeMixin implements _Text {
 }
 
 abstract class _Text implements Text {
-  factory _Text({BlockDetails? details, TextBody? content}) = _$_Text;
+  factory _Text({required BlockDetails? details, required TextBody? content}) =
+      _$_Text;
 
   @override
   BlockDetails? get details;

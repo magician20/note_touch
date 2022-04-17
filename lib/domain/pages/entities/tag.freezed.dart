@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TagTearOff {
   const _$TagTearOff();
 
-  _Tag call({BlockDetails? details, LabelName? content}) {
+  _Tag call({required BlockDetails? details, required LabelName? content}) {
     return _Tag(
       details: details,
       content: content,
@@ -125,7 +125,7 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Tag implements _Tag {
-  _$_Tag({this.details, this.content});
+  _$_Tag({required this.details, required this.content});
 
   @override
   final BlockDetails? details;
@@ -159,7 +159,8 @@ class _$_Tag implements _Tag {
 }
 
 abstract class _Tag implements Tag {
-  factory _Tag({BlockDetails? details, LabelName? content}) = _$_Tag;
+  factory _Tag({required BlockDetails? details, required LabelName? content}) =
+      _$_Tag;
 
   @override
   BlockDetails? get details;

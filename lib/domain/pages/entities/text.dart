@@ -9,7 +9,7 @@ part 'text.freezed.dart';
 @freezed
 class Text with _$Text implements Block{
   factory Text({
-    @required BlockDetails? details,
-    @required TextBody? content,
+    required BlockDetails? details,
+    required TextBody? content,
   }) = _Text;
 }

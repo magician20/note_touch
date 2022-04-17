@@ -20,13 +20,13 @@ class _$PageTearOff {
 
   _Page call(
       {UniqueId? id,
-      PageTitle? title,
-      PageColor? color,
-      PageStatus? status,
-      PageState? state,
-      BuiltList<Block>? block,
-      DateTime? created_at,
-      DateTime? updated_at}) {
+      required PageTitle? title,
+      required PageColor? color,
+      required PageStatus? status,
+      required PageState? state,
+      required BuiltList<Block>? block,
+      required DateTime? created_at,
+      required DateTime? updated_at}) {
     return _Page(
       id: id,
       title: title,
@@ -208,13 +208,13 @@ class __$PageCopyWithImpl<$Res> extends _$PageCopyWithImpl<$Res>
 class _$_Page implements _Page {
   _$_Page(
       {this.id,
-      this.title,
-      this.color,
-      this.status,
-      this.state,
-      this.block,
-      this.created_at,
-      this.updated_at});
+      required this.title,
+      required this.color,
+      required this.status,
+      required this.state,
+      required this.block,
+      required this.created_at,
+      required this.updated_at});
 
   @override
   final UniqueId? id;
@@ -276,13 +276,13 @@ class _$_Page implements _Page {
 abstract class _Page implements Page {
   factory _Page(
       {UniqueId? id,
-      PageTitle? title,
-      PageColor? color,
-      PageStatus? status,
-      PageState? state,
-      BuiltList<Block>? block,
-      DateTime? created_at,
-      DateTime? updated_at}) = _$_Page;
+      required PageTitle? title,
+      required PageColor? color,
+      required PageStatus? status,
+      required PageState? state,
+      required BuiltList<Block>? block,
+      required DateTime? created_at,
+      required DateTime? updated_at}) = _$_Page;
 
   @override
   UniqueId? get id;
