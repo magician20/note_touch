@@ -51,7 +51,7 @@ class _EnteryFieldFirstNameState extends State<EnteryFieldFirstName> {
                           'Invaild Name Only Alphabet',
                       orElse: () => "",
                     ),
-                    (_) => "",
+                    (_) => null,
                   );
             },
           )

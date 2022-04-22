@@ -58,7 +58,7 @@ class _EnterFieldPasswordState extends State<EnterFieldPassword> {
                           'At least One Special Letter',
                       orElse: () => "",
                     ),
-                    (_) => "",
+                    (_) => null,
                   );
             },
           )

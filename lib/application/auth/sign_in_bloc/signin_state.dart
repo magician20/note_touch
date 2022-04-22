@@ -4,15 +4,15 @@ part of 'signin_bloc.dart';
 class SignInState  with _$SignInState {
    const factory SignInState({
     //Validated EmailAddress 
-    @required EmailAddress? emailAddress,
+    required EmailAddress? emailAddress,
     //Validated password length only
-    @required Password? password,
+    required Password? password,
     //Whether or not to show input error messages
-    @required bool? showErrorMessages,
+    required bool? showErrorMessages,
     //Showing a progress indicator
-    @required bool? isSubmitting,
+    required bool? isSubmitting,
     //Success or error backend response
-    @required Option<Either<AuthFailure, Unit>>? authFailureOrSuccessOption,
+    required Option<Either<AuthFailure, Unit>>? authFailureOrSuccessOption,
   }) = _SignInState;
 
   factory SignInState.initial() => SignInState(

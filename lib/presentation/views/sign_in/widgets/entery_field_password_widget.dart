@@ -82,7 +82,7 @@ class _EnterFieldPasswordState extends State<EnterFieldPassword> {
                       empty: (_) => 'Empty Password', //required
                       orElse: () => "",
                     ),
-                    (_) => "",
+                    (_) => null,
                   );
             },
           )

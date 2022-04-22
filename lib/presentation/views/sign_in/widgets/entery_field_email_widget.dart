@@ -53,7 +53,7 @@ class _EnterFieldEmailState extends State<EnterFieldEmail> {
                       invalidEmail: (_) => 'Invalid email',
                       orElse: () => "",
                     ),
-                    (_) => "",
+                    (_) => null,
                   );
             },
           )
